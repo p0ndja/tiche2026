@@ -13,12 +13,12 @@
             <div class="col-12 col-lg-3">
                 <?php require_once '../static/function/sidetab.php'; ?>
             </div>
+            <?php $isClose = getDatatable("closeRegistration")["value"]; ?>
             <div class="col-12 col-lg-9">
                 <h2 class="font-weight-bold">REGISTRATION FOR TIChE2026</h2>
                 <hr>
                 <div>
-                <?php 
-                $isClose = getDatatable("closeRegistration")["value"];
+                <?php
                 if ($isClose) { ?>
                     <div class="alert alert-danger">
                     TIChE has already ended. The Registration is now closed.</div>

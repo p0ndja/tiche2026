@@ -14,6 +14,7 @@
                 <?php require_once '../static/function/sidetab.php'; ?>
             </div>
             <div class="col-12 col-lg-9">
+                <?php $isClose = getDatatable("closeSubmitTicheProceeding")["value"]; ?>
                 <h3 class="font-weight-bold">FULL PAPER SUBMISSION</h3>
                 <hr>
                 <div class="card">
@@ -25,9 +26,8 @@
                                 <label for="typeOfPaper">Type of Paper <span class="text-danger">*</span></label>
                                 <select id="typeOfPaper" name="typeOfPaper" class="form-control" required>
                                     <option value="" disabled selected>Select Type of Paper</option>
-                                    <option value="TIChE2026 Conference Proceeding" disabled class="text-danger">TIChE2026 Conference Proceeding [CLOSED]</option>
-                                    <option value="Applied Environmental Research">Applied Environmental Research</option>
-                                    <option value="Asia-Pacific Journal of Science and Technology">Asia-Pacific Journal of Science and Technology</option>
+                                    <option value="TIChE2026 Conference Proceeding" <?php if ($isClose) echo "disabled class='text-danger'"; ?>>TIChE2026 Conference Proceeding <?php if ($isClose) echo "[CLOSED]"; ?></option>
+                                    <option value="Thai Environmental Engineering Journal">Thai Environmental Engineering Journal</option>
                                 </select>
                             </div>
                             <div id="note"></div>
@@ -88,34 +88,19 @@
                                         $('#note').html(`
                                         <span class='text-primary'>Please note that this full paper will be published in the <b><i>TIChE2026 Conference Proceedings</i></b>.
                                         If the authors need to preceed with this publication, the submission must follow the provided template and consist of no fewer than 5 pages. </span>
-                                        <span class='text-danger'>The final submission deadline is <b>April 30, 2025</b>.</span>
+                                        <span class='text-danger'>The final submission deadline is <b>April 30, 2026</b>.</span>
                                         `);
                                         $("#sub_file_label").html("Upload File<span class='text-danger'>*</span>&nbsp;<a href='/static/asset/upload/TIChE2026%20Conference%20Proceeding%20Template.docx' target='_blank'>[Download TIChE2026 Conference Proceeding Template]</a>");
-                                    } else if (type == 'Applied Environmental Research') {
+                                    } else if (type == 'Thai Environmental Engineering Journal') {
                                         $('#note').html(`
-                                        <span class='text-primary'>Please note that this full paper will be considered by the TIChE2026 conference committee to ensure it aligns perfectly with the journal’s aims and scope to foster academic dialogue before submission to <b><i>Applied Environmental Research</i></b>.</span> <span class='text-danger'>Kindly submit the manuscript to the TIChE2026 conference committee as indicated below <b>by June 30, 2025</b>. Then, we will inform the author regarding submission to the journal after consideration.</span>
+                                        <span class='text-primary'>Please note that this full paper will be considered by the TIChE2026 conference committee to ensure it aligns perfectly with the journal’s aims and scope to foster academic dialogue before submission to <b><i>Thai Environmental Engineering Journal</i></b>.</span> <span class='text-danger'>Kindly submit the manuscript to the TIChE2026 conference committee as indicated below <b>by June 30, 2026</b>. Then, we will inform the author regarding submission to the journal after consideration.</span>
                                         <h5 class="font-weight-bold mt-4 mb-0">About Journal</h5>
                                         <hr>
-                                        <strong>Applied Environmental Research&nbsp;</strong><br />
-                                        Scopus Indexed 2023: <b>Q3</b><br />
-                                        CiteScore 2023: <b>2.0</b><br />
-                                        Instructions for Manuscript Preparation, Visit: <a href="https://ph01.tci-thaijo.org/index.php/aer">https://ph01.tci-thaijo.org/index.php/aer</a><br><br>
+                                        <strong>Thai Environmental Engineering Journal&nbsp;</strong><br />
+                                        TCI: <b>Tier 1</b><br /><br />
+                                        See <a href="https://so05.tci-thaijo.org/index.php/teej">https://so05.tci-thaijo.org/index.php/teej</a><br><br>
 
-                                        <img alt="" src="https://tiche2026.ubu.ac.th/static/asset/upload/AER.jpg" style="margin:0 !important; text-align:left !important; width:160px" class="z-depth-1"/>
-                                        <div class="pb-3"></div>
-                                        `);
-                                        $("#sub_file_label").html("Upload Manuscript File<span class='text-danger'>*</span>");
-                                    } else if (type == 'Asia-Pacific Journal of Science and Technology') {
-                                        $('#note').html(`
-                                        <span class='text-primary'>Please note that this full paper will be considered by the TIChE2026 conference committee to ensure it aligns perfectly with the journal's aims and scope to foster academic dialogue before submission to <b><i>Asia-Pacific Journal of Science and Technology.</i></b></span> <span class='text-danger'>Kindly submit the manuscript to the TIChE2026 conference committee as indicated below <b>by June 30, 2025.</b> Then, we will inform the author regarding submission to the journal after consideration.</span>
-                                        <h5 class="font-weight-bold mt-4 mb-0">About Journal</h5>
-                                        <hr>
-                                        <strong>Asia-Pacific Journal of Science and Technology</strong><br />
-                                        Scopus Indexed 2023: <b>Q3</b><br />
-                                        CiteScore 2023: <b>0.9</b><br />
-                                        Instructions for Manuscript Preparation, Visit: <a href="https://so01.tci-thaijo.org/index.php/APST">https://so01.tci-thaijo.org/index.php/APST</a><br><br>
-                                        
-                                        <img alt="" src="https://tiche2026.ubu.ac.th/static/asset/upload/APST.jpg" style="margin:0 !important; text-align:left !important; width:160px" class="z-depth-1"/>
+                                        <img alt="" src="https://so05.tci-thaijo.org/public/journals/649/cover_issue_18068_en_US.jpg" style="margin:0 !important; text-align:left !important; width:160px" class="z-depth-1"/>
                                         <div class="pb-3"></div>
                                         `);
                                         $("#sub_file_label").html("Upload Manuscript File<span class='text-danger'>*</span>");
