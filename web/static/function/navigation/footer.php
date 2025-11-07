@@ -32,7 +32,7 @@
         </div> -->
         <div class="row pt-3">
             <div class="col-12 text-center mb-2">
-                <h6 class="text-white"><a class="md-light" href="/privacy/">Privacy Policy</a>&nbsp;•&nbsp;<?php if (!isLogin()) { ?><a class="md-light" href="../login/">Manage</a><?php } else { ?><a class="md-light" href="../logout/">Logout</a><?php } ?></h6>
+                <h6 class="text-white"><a href="/privacy/">Privacy Policy</a>&nbsp;•&nbsp;<?php if (!isLogin()) { ?><a href="../login/">Manage</a><?php } else { ?><a class="md-light" href="../logout/">Logout</a><?php } ?></h6>
                 <h6 class="text-white mt-2">Copyright 2025 - 2026 &copy; Department of Chemical Engineering, Faculty of Engineering, Ubon Ratchathani University, Thailand. All Right Reserved.</h6>
                 <small class='text-white'>For any inquiries, please contact us at <a href="mailto:tiche2026@ubu.ac.th"><b>[xxx]@[ubu.ac.th]</b></a>, where we will respond promptly to your messages.</small>
                 <br><small class='text-muted'>Please note that <b>tiche2026.noreply@gmail.com</b> is used exclusively for system notifications and confirmations. Any messages sent to this address will not receive a response.</small><br>

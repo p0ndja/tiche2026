@@ -30,7 +30,7 @@ html {
 }
 ::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-  background-color: var(--md-light);
+  background-color: var(--ubu-pink);
 }
 body {
   font-family: "Inter", "Sarabun", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -130,7 +130,11 @@ body .admin {
   cursor: not-allowed;
 }
 .nav-link {
-  font-weight: 400;
+  font-weight: 700 !important;
+}
+.nav-item {
+  font-size: 14px !important;
+  text-wrap: nowrap;
 }
 .navbar + .container {
   padding-top: 88px;
@@ -351,11 +355,11 @@ ul.dropdown-lr {
   transition: 0.3s;
 }
 .md-light {
-  color: var(--md-ultra-light);
+  color: var(--ubu-sub-blue);
   transition: 0.3s;
 }
 .md-light:hover {
-  color: var(--md-light);
+  color: var(--ubu-blue);
   transition: 0.3s;
 }
 .navbar-custom-md {
