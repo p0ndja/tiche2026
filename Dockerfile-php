@@ -1,0 +1,42 @@
+FROM php:8.2-apache
+ARG timezone=Asia/Bangkok
+ENV TZ $timezone
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
+# Install dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libzip-dev \
+    zip \
+    unzip \
+    git \
+    libssl-dev \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libmagickwand-dev \
+    pkg-config \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j"$(nproc)" gd zip pdo mysqli \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick \
+    && rm -rf /var/lib/apt/lists/*
+
+# Enable Apache modules for rewrite and headers
+RUN a2enmod rewrite headers
+
+# Set working directory
+WORKDIR /var/www/html
+
+# Copy application files
+COPY ./web /var/www/html/
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
+
+# Expose port 80 only (Traefik handles SSL)
+EXPOSE 80
+
+# Start Apache
+CMD ["apache2-foreground"]

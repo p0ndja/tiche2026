@@ -1,0 +1,12 @@
+file/ckeditor/
+file/.ckfinder/
+file/
+file/people/
+static/function/stats/counter.txt
+.DS_Store
+static/function/config.php
+static/function/mail/config.php
+api/payment/config.php
+api/payment_local/test.html
+api/payment/test.html
+api/payment_local/config.php

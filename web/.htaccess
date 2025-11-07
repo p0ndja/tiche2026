@@ -1,0 +1,99 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^/$ page/home.php
+
+RewriteRule ^privacy/$ page/privacy.php
+
+RewriteRule ^login/$ page/auth_login.php
+RewriteRule ^register/$ page/auth_register.php
+RewriteRule ^logout/$ static/function/auth/logout.php
+RewriteRule ^forgetpassword/$ page/password_forget.php [L]
+RewriteRule ^resetpassword/$ page/password_reset.php [L]
+RewriteRule ^template/$ page/template.php
+RewriteRule ^download/$ page/download.php
+RewriteRule ^department/$ page/department.php
+RewriteRule ^facility/$ page/facility.php
+
+RewriteRule ^COVID19-drug-delivery/$ page/COVID19_drug_delivery.php
+RewriteRule ^HRD/$ page/HRD.php [L]
+
+RewriteRule ^submission/$ page/submission_abstract.php
+RewriteRule ^submission/abstract$ page/submission_abstract.php
+RewriteRule ^submission/full-paper$ page/submission_paper.php
+RewriteRule ^submission/senior$ page/submission_senior.php
+RewriteRule ^submission/school$ page/submission_school.php
+
+RewriteRule ^submission-abstract/list$ page/submission_abstract_list.php
+RewriteRule ^submission-abstract/([0-9]+)$ page/submission_abstract_id.php?id=$1
+RewriteRule ^submission-paper/list$ page/submission_paper_list.php
+RewriteRule ^submission-paper/([0-9]+)$ page/submission_paper_id.php?id=$1
+RewriteRule ^submission-senior/list$ page/submission_senior_list.php
+RewriteRule ^submission-senior/([0-9]+)$ page/submission_senior_id.php?id=$1
+RewriteRule ^submission-school/list$ page/submission_school_list.php
+RewriteRule ^submission-school/([0-9]+)$ page/submission_school_id.php?id=$1
+
+RewriteRule ^registration/$ page/registration.php
+RewriteRule ^registration/result$ page/registration.result.php
+RewriteRule ^registration/proceed-([0-9]+)$ page/registration.proceed.php?registration_id=$1
+RewriteRule ^registration/proceeder$ page/registration.sender.php
+RewriteRule ^registration/list$ page/registration_list.php
+RewriteRule ^registration/([0-9]+)$ page/registration_id.php?id=$1
+
+RewriteRule ^post/$ page/post.php?id=$1
+RewriteRule ^post/([0-9]+)$ page/post_id.php?id=$1
+RewriteRule ^post/create$ page/postEditor.php
+RewriteRule ^post/edit-([0-9]+)$ page/postEditor.php?id=$1
+
+RewriteRule ^posts/$ page/post_all.php
+RewriteRule ^posts/all$ page/post_all.php
+RewriteRule ^posts/(.*)-(.*)$ page/post_all.php?category=$1&tags=$2 [B,L,QSA]
+RewriteRule ^posts/(.*)$ page/post_all.php?category=$1 [B,L,QSA]
+
+RewriteRule ^category/$ page/post.php [L]
+RewriteRule ^category/(.*)-([0-9]+)$ page/post.php?category=$1&page=$2 [B,L,QSA]
+RewriteRule ^category/(.*)-([0-9]+)-(.*)$ page/post.php?category=$1&page=$2&tags=$3 [B,L,QSA]
+
+RewriteRule ^suggestion/$ page/suggestion.php
+
+RewriteRule ^profile/$ page/profile.php
+
+RewriteRule ^user/$ page/admin_user.php [L]
+RewriteRule ^user/([0-9]+)$ page/admin_user.php?id=$1
+
+RewriteRule ^newsletter/$ page/newsletter.php [L]
+RewriteRule ^newsletter/create$ page/newsletter_edit.php [L]
+RewriteRule ^newsletter/edit-([0-9]+)$ page/newsletter_edit.php?id=$1
+
+RewriteRule ^epub/$ page/flipbook_loader.php?color=white [L,QSA]
+RewriteRule ^epub/p([0-9]+)$ page/flipbook_loader.php?color=white&post=$1 [L,QSA]
+
+RewriteRule ^admin/(.*)$ page/admin_$1.php [B,L,QSA]
+RewriteRule ^people/(.*)$ page/people_$1.php [B,L,QSA]
+
+RewriteRule ^patient-guideline/$ page/timetable_PG.php [L]
+RewriteRule ^patient-guideline/([0-9]+)$ page/timetable_PG.php?id=$1 [L]
+RewriteRule ^patient-guideline/([0-9]+)-edit$ page/timetable_edit.php?category=PG&id=$1 [L]
+
+RewriteRule ^FAQ/$ page/timetable_FAQ.php [L]
+RewriteRule ^FAQ/([0-9]+)$ page/timetable_FAQ.php?id=$1 [L]
+RewriteRule ^FAQ/([0-9]+)-edit$ page/timetable_edit.php?category=FAQ&id=$1 [L]
+
+RewriteRule ^timetable/(.*)-([0-9]+)$ page/timetable_$1.php?id=$2 [B,L,QSA]
+RewriteRule ^timetable/(.*)-([0-9]+)-edit$ page/timetable_edit.php?category=$1&id=$2 [B,L,QSA]
+RewriteRule ^timetable/(.*)$ page/timetable_$1.php [B,L,QSA]
+
+RewriteRule ^doctor/$ page/people_doctor.php
+RewriteRule ^dean/$ page/people_dean.php
+
+Options +FollowSymlinks
+Options -Indexes
+DirectoryIndex .index.php .index.html index.php index.html .redirect.html redirect.html landing.html landing.php .landing.html .landing.php page/home.php .redirect.php redirect.php
+
+php_value post_max_size 128M
+php_value upload_max_filesize 128M
+php_value display_errors Off
+php_value max_execution_time 300
+php_flag display_startup_errors On
+php_flag display_errors Off

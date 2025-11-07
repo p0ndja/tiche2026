@@ -1,0 +1,14 @@
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^callback$ callback.php [B,L,QSA]
+RewriteRule ^gateway$ gateway.php [B,L,QSA]
+
+php_value post_max_size 128M
+php_value upload_max_filesize 128M
+php_value display_errors Off
+php_value max_execution_time 300
+php_flag display_startup_errors On
+php_flag display_errors Off

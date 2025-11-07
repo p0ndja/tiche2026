@@ -1,0 +1,59 @@
+services:
+  tiche2026_web:
+    build:
+      context: .
+      dockerfile: Dockerfile-php
+    container_name: tiche2026_web
+    restart: unless-stopped
+    labels:
+      # Traefik configuration
+      - "traefik.enable=true"
+      # HTTP configuration for localhost
+      - "traefik.http.routers.tiche2026-http.rule=Host(`tiche2026.localhost`)"
+      - "traefik.http.routers.tiche2026-http.entrypoints=web"
+      - "traefik.http.services.tiche2026-service.loadbalancer.server.port=80"
+      # HTTPS configuration for external domain
+      - "traefik.http.routers.tiche2026-https.rule=Host(`tiche2026-uat.lorgiz.xyz`)"
+      - "traefik.http.routers.tiche2026-https.entrypoints=websecure"
+      - "traefik.http.routers.tiche2026-https.tls=true"
+      - "traefik.http.routers.tiche2026-https.tls.certresolver=myresolver"
+      - "traefik.http.routers.tiche2026-https.service=tiche2026-service"
+      # Explicitly tell Traefik which network to use
+      - "traefik.docker.network=traefik_network"
+    volumes:
+      - ./web:/var/www/html
+      - ./file:/var/www/html/file
+      - ./apache-vhost.conf:/etc/apache2/sites-available/000-default.conf
+      - ./conf.php:/var/www/html/static/function/config.php
+      - ./conf.mail.php:/var/www/html/static/function/mail/config.php
+      - ./conf.payment.php:/var/www/html/api/payment/config.php
+    depends_on:
+      - tiche2026_db
+    networks:
+      - traefik_network
+      - tiche2026_network
+
+  tiche2026_db:
+    image: mysql:8.0
+    container_name: tiche2026_db
+    ports:
+      - "33060:3306"
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_SCHEMA}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - tiche2026_db_data:/var/lib/mysql
+    networks:
+      - tiche2026_network
+
+networks:
+  traefik_network:
+    external: true
+  tiche2026_network:
+    driver: bridge
+
+volumes:
+  tiche2026_db_data:
