@@ -30,8 +30,8 @@
     $og = array(
         'title' => "TIChE2026 - Organized by Department of Chemical Engineering, Faculty of Engineering, Ubon Ratchathani University",
         'logo'=> "$host_url/static/asset/header_16x9.png",
-        'height'=> 1280,
-        'width'=> 720
+        'height'=> 720,
+        'width'=> 1280
     );
     
     if (strpos($current_url, "/post/") && isset($_GET['id'])) {
