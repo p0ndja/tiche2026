@@ -9,7 +9,7 @@
     }
 </style> -->
 <div class="container text-uppercase">
-<img src="/static/asset/header_web.min.png" class="fixed-top-image img-fluid"/>
+<img src="/static/asset/header_web_2.min.png" class="fixed-top-image img-fluid"/>
 </div>
 <div class="mb-1 mb-md-3 d-none"></div>
 <div class="container text-uppercase">
