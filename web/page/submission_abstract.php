@@ -87,7 +87,7 @@
                             </div>
                             <!-- Upload File -->
                             <div class="form-group">
-                                <label for="sub_file">Upload File <span class="text-danger">*</span> <a href="/static/asset/upload/TIChE2026%20Abstract%20Template.docx" target="_blank">[Download Abstract Template]</a></label>
+                                <label for="sub_file">Upload File <span class="text-danger">*</span> <a href="/static/asset/upload/Abstract%20Template%20for%20TIChE2026.docx" target="_blank">[Download Abstract Template]</a></label>
                                 <input type="file" class="form-control-file" id="sub_file" name="sub_file" required <?php if ($isClose) echo "disabled"; ?> accept=".doc,.docx">
                                 <span class="text-danger">Accept: .doc, .docx</span>
                             </div>
