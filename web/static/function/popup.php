@@ -90,18 +90,6 @@
         </div>
     </div>
 </div>
-<!-- Webstats Modal -->
-<div class="modal animated fade" id="webstatsModal" name="webstatsModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-notify modal-md modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">สถิติเว็บไซต์</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body"><?php include '../static/function/stats/counter.php'; ?></div>
-        </div>
-    </div>
-</div>
 <?php if (isAdmin()) { ?>
 <script>
     function CarouselModal() {$('#modalTitleXL').html('แก้ไขรูปแบนเนอร์');$('#modalBodyXL').html('');$.ajax({type: 'GET',url: '../endpoint/admin_carousel_query.php',success: function (data) {$('#modalBodyXL').html(data);}});}
