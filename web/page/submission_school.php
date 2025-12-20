@@ -14,9 +14,9 @@
                 <?php require_once '../static/function/sidetab.php'; ?>
             </div>
             <div class="col-12 col-lg-9">
-                <h3 class="font-weight-bold">TIChE HIGH SCHOOL PROJECT CONTEST 2025</h3>
+                <h3 class="font-weight-bold">TIChE HIGH SCHOOL PROJECT CONTEST 2026</h3>
                 <hr>
-                <p>TIChE High School Project Contest 2025 is a highlight of TIChE2026, providing a dedicated platform to inspire young scientific minds at the high school level. This <b>poster competition</b> fosters curiosity, creativity, and innovation in chemical sciences and engineering, encouraging students to showcase their research and apply their scientific knowledge in impactful ways.</p>
+                <p>TIChE High School Project Contest 2026 is a highlight of TIChE2026, providing a dedicated platform to inspire young scientific minds at the high school level. This <b>poster competition</b> fosters curiosity, creativity, and innovation in chemical sciences and engineering, encouraging students to showcase their research and apply their scientific knowledge in impactful ways.</p>
                 <p>
                 <b>Project Requirements:</b>
                 <ul>
@@ -35,9 +35,9 @@
                 <p>
                 <b>Submission Deadlines and Competition Date:</b>
                 <ul>
-                <li>Schools must submit the student names, project title, supervising teacher’s name, and project description (in English, not exceeding 250 words) by <b>April 30, 2025.</b></li>
-                <li>Announcement of selected projects for the competition will be made by <b>May 7, 2025.</b></li>
-                <li>TIChE High School Project Contest 2025 will take place on <b>May 21, 2025</b>, at Dusit Thani Hotel, Pattaya, Chonburi.</li>
+                <li>Schools must submit the student names, project title, supervising teacher's name, and project description (in English, not exceeding 250 words) by <b>April 30, 2026.</b></li>
+                <li>Announcement of selected projects for the competition will be made by <b>May 7, 2026.</b></li>
+                <li>TIChE High School Project Contest 2026 will take place on <b>May 21, 2026</b>, at Dusit Thani Hotel, Pattaya, Chonburi.</li>
                 </ul>
                 </p>
                 <p><b>Additional Information (in Thai):</b></p>
@@ -45,8 +45,8 @@
                     Participants can access important materials, including competition guidelines, evaluation criteria, and event schedules. These materials will help ensure that high school projects meet the required standards and that all participants are well-prepared for the competition.
                 </p>
                 <p>
-                    <b>Download materials here:</b> <a href="/static/asset/upload/TIChE%20High%20School%20Project%20Contest%202025.pdf" target="_blank">TIChE High School Project Contest 2025</a><br>
-                    <b>Download template here:</b> <a href="/static/asset/upload/TIChE2026%20Abstract%20Template.docx" target="_blank">Abstract Template</a>
+                    <b>Download materials here:</b> <a href="/static/asset/upload/รายละเอียด%20TIChE%20High%20School%20Project%20Contest%202026.pdf" target="_blank">TIChE High School Project Contest 2026</a><br>
+                    <b>Download template here:</b> <a href="/static/asset/upload/Abstract%20Template%20for%20TIChE%20High%20School%20Project%20Contest%202026.docx" target="_blank">Abstract Template</a>
                 </p>
 
                 <h3 class="font-weight-bold mt-5">ONLINE SUBMISSION</h3>

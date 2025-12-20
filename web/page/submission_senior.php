@@ -14,9 +14,9 @@
                 <?php require_once '../static/function/sidetab.php'; ?>
             </div>
             <div class="col-12 col-lg-9">
-                <h3 class="font-weight-bold">TIChE SENIOR PROJECT CONTEST 2025</h3>
+                <h3 class="font-weight-bold">TIChE SENIOR PROJECT CONTEST 2026</h3>
                 <hr>
-                <p>TIChE Senior Project Contest 2025 is one of the key events at TIChE2026, a competition showcasing outstanding undergraduate research in chemical engineering and applied chemistry across universities in Thailand. It provides students with a platform to present their innovative projects and gain recognition for their work.</p>
+                <p>TIChE Senior Project Contest 2026 is one of the key events at TIChE2026, a competition showcasing outstanding undergraduate research in chemical engineering and applied chemistry across universities in Thailand. It provides students with a platform to present their innovative projects and gain recognition for their work.</p>
                 <p>
                 <b>Competition Categories:</b>
                 <ul>
@@ -36,8 +36,8 @@
                 <p>
                 <b>Submission Deadlines and Competition Date:</b>
                 <ul>
-                    <li>Department must submit two projects, along with a list of up to four students and the name of a faculty member serving as a committee, by <b>April 30, 2025.</b></li>
-                    <li>The competition will be held on <b>May 20, 2025</b>, with sessions scheduled for both the morning and afternoon.</li>
+                    <li>Department must submit two projects, along with a list of up to four students and the name of a faculty member serving as a committee, by <b>April 30, 2026.</b></li>
+                    <li>The competition will be held on <b>May 20, 2026</b>, with sessions scheduled for both the morning and afternoon.</li>
                 </ul>
                 </p>
                 <p><b>Additional Information (in Thai):</b></p>
@@ -45,8 +45,8 @@
                     Participants and faculty members can access important materials, including competition guidelines, evaluation criteria, and event schedules. These materials will help ensure that projects meet the required standards and that all participants are well-prepared for the competition.
                 </p>
                 <p>
-                    <b>Download materials here:</b> <a href="/static/asset/upload/TIChE%20Senior%20Project%20Contest%202025.pdf" target="_blank">TIChE Senior Project Contest 2025</a><br>
-                    <b>Download template here:</b> <a href="/static/asset/upload/TIChE2026%20Abstract%20Template.docx" target="_blank">Abstract Template</a>
+                    <b>Download materials here:</b> <a href="/static/asset/upload/รายละเอียด%20TIChE%20Senior%20Project%20Contest%202026.pdf" target="_blank">TIChE Senior Project Contest 2026</a><br>
+                    <b>Download template here:</b> <a href="/static/asset/upload/Abstract%20Template%20for%20TIChE%20Senior%20Project%20Contest%202026.docx" target="_blank">Abstract Template</a>
                 </p>
 
                 <h3 class="font-weight-bold mt-5">ONLINE REGISTRATION</h3>
