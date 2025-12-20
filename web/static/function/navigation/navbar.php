@@ -1,9 +1,18 @@
 <?php require_once '../static/function/connect.php'; ?>
 <script>function logoutBtn() { swal({title:"ออกจากระบบ ?",text:"คุณต้องการออกจากระบบหรือไม่?",icon:"warning",buttons:true,dangerMode:true}).then((willDelete) => {if (willDelete) window.location = "../logout/";}); }</script>
-<div class="container text-uppercase">
-<img src="/static/asset/header_web_2.1.min.png" class="img-fluid"/>
+<?php if (isLogin()) { ?>
+<div style="position: fixed; top: 0px; width: 100%; z-index: 1000;">
+    <div class="navbar-color-user">
+        <div class="d-flex justify-content-between p-2">    
+            <div class="flex-grow-1 font-weight-bold text-dark">Welcome, <?php echo $_SESSION['currentActiveUser']->getEmail(); ?></div>
+            <a href="/profile/" class="px-2 text-dark">Profile</a>
+            <a href="javascript:logoutBtn();" class="px-2 text-dark">Logout</a>
+        </div>
+    </div>
 </div>
-<div class="mb-1 mb-md-3 d-none"></div>
+<div style="padding-bottom: 40px;"></div>
+<?php } ?>
+<div class="container text-uppercase"><img src="/static/asset/header_web_2.1.min.png" class="img-fluid"/></div>
 <div class="container text-uppercase">
     <nav class="navbar navbar-md navbar-expand-lg navbar-light navbar-normal p-0 navbar-color-one" style="font-weight: 500;">
         <button id="navbarCollapseButton" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler mx-auto">

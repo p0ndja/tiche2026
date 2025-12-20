@@ -17,13 +17,16 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12 col-md-4 mb-3">
-                            <img class="img-fluid w-100" loading="lazy" src="<?php echo $_SESSION['currentActiveUser']->getProfile(); ?>" id="profile_preview">
-                            <input type="file" name="profile_upload" id="profile_upload"
-                                    class="form-control-file validate mt-1 mb-1" accept="image/png, image/jpeg, image/webp">
-                            <input type="hidden" id="profile_final" name="profile_final" value="<?php echo $_SESSION['currentActiveUser']->getProfile(); ?>">
-                            <button type="submit" class="btn btn-success btn-block btn-lg font-weight-bold text-dark">Update</button>
+                            <div class="px-5 py-3">
+                                <img class="img-fluid w-100" loading="lazy" src="<?php echo $_SESSION['currentActiveUser']->getProfile(); ?>" id="profile_preview">
+                                <input type="file" name="profile_upload" id="profile_upload"
+                                        class="form-control-file validate mt-1 mb-1" accept="image/png, image/jpeg, image/webp">
+                                <input type="hidden" id="profile_final" name="profile_final" value="<?php echo $_SESSION['currentActiveUser']->getProfile(); ?>">
+                                <button type="submit" class="btn btn-success btn-block btn-lg font-weight-bold text-dark">Update</button>
+                            </div>
                         </div>
                         <div class="col-12 col-md-8">
+                            <div class="d-none">
                             <!-- Personal Zone -->
                             <h4 class="font-weight-bold">General Information <i
                                     class="fas fa-info-circle"></i></h4>
@@ -38,12 +41,12 @@
                                         placeholder="<?php echo $_SESSION['currentActiveUser']->getName(); ?>"
                                         value="<?php echo $_SESSION['currentActiveUser']->getName(); ?>">
                                 </div>
-                            
+</div>
                             <!-- name -->
                             <!-- Personal Zone -->
 
                             <!-- Security Zone -->
-                            <h4 class="mt-5 font-weight-bold">Security <i class="fas fa-lock"></i>
+                            <h4 class="font-weight-bold">Security <i class="fas fa-lock"></i>
                             </h4>
                             <hr>
                             <!-- Email -->
@@ -79,9 +82,9 @@
                             <div class="text-center"><small class="text-danger mt-0" id="cfpwAlert"></small></div>
                             <!-- Password -->
                             <!-- Security Zone -->
-
+                            <div class="d-none">
                             <!-- Delete Zone -->
-                            <h4 class="mt-5 font-weight-bold">Account Deactivation <i
+                            <h4 class="font-weight-bold">Account Deactivation <i
                                     class="fas fa-trash-alt"></i>
                             </h4>
                             <hr>
@@ -89,6 +92,7 @@
                             <a class="btn btn-danger btn-lg" href="javascript:{}"
                                 onclick='swal({title: "Deactivate this account ?",text: "This cannot be undone.",icon: "warning",buttons: true,dangerMode: true}).then((willDelete) => { if (willDelete) { window.location = "../endpoint/user_delete.php?id=<?php echo $id; ?>";}});''>Deactivate your account</a>
                             <!-- Delete Zone -->
+                            </div>
                         </div>
                     </div>
                 </div>

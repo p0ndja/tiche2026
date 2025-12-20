@@ -293,6 +293,10 @@ ul.dropdown-lr {
 .navbar-color-four {
   background-color: black;
 }
+.navbar-color-user {
+  background-color: var(--ubu-yellow);
+  color: black !important;
+}
 .border-verticle-right {
   padding-top: 5px;
   padding-bottom: 5px;
