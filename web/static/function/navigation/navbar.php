@@ -1,15 +1,7 @@
 <?php require_once '../static/function/connect.php'; ?>
 <script>function logoutBtn() { swal({title:"ออกจากระบบ ?",text:"คุณต้องการออกจากระบบหรือไม่?",icon:"warning",buttons:true,dangerMode:true}).then((willDelete) => {if (willDelete) window.location = "../logout/";}); }</script>
-<!-- <style>
-    .fixed-top-image {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000; /* Ensure it stays on top of other content */
-    }
-</style> -->
 <div class="container text-uppercase">
-<img src="/static/asset/header_web_2.min.png" class="fixed-top-image img-fluid"/>
+<img src="/static/asset/header_web_2.1.min.png" class="img-fluid"/>
 </div>
 <div class="mb-1 mb-md-3 d-none"></div>
 <div class="container text-uppercase">
