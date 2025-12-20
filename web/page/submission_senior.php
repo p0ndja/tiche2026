@@ -37,7 +37,7 @@
                 <b>Submission Deadlines and Competition Date:</b>
                 <ul>
                     <li>Department must submit two projects, along with a list of up to four students and the name of a faculty member serving as a committee, by <b>April 30, 2026.</b></li>
-                    <li>The competition will be held on <b>May 20, 2026</b>, with sessions scheduled for both the morning and afternoon.</li>
+                    <li>The competition will be held on <b><i>*to be announced date*</i></b>, with sessions scheduled for both the morning and afternoon.</li>
                 </ul>
                 </p>
                 <p><b>Additional Information (in Thai):</b></p>
