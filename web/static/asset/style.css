@@ -195,7 +195,7 @@ ul.dropdown-lr {
 }
 .c_title {
   color: #ffffff;
-  background: var(--sngr);
+  background: var(--ubu-sub-blue);
   padding: 0.15em 0.7em;
   padding-right: 1em;
   display: inline-block;
@@ -203,7 +203,7 @@ ul.dropdown-lr {
 }
 .c_tail {
   position: absolute;
-  background: var(--sngr);
+  background: var(--ubu-sub-blue);
   width: 30px;
   height: 100%;
   top: 0;
@@ -213,7 +213,7 @@ ul.dropdown-lr {
 }
 .c_tail2 {
   position: absolute;
-  background: var(--sngr-dark);
+  background: var(--ubu-blue);
   width: 30px;
   height: 100%;
   top: 4px;
@@ -223,7 +223,7 @@ ul.dropdown-lr {
 }
 .c_header {
   font-size: 1.5em;
-  border-bottom: 2px solid var(--sngr);
+  border-bottom: 2px solid var(--ubu-blue);
 }
 .sticky-content {
   position: sticky;
