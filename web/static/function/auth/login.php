@@ -8,7 +8,7 @@ if (isset($_POST['authLoginFormHandshake']) && isset($_POST['authLoginForm_usern
         unset($_SESSION['auth_error']);
         unset($_SESSION['auth_attempt']);
         $_SESSION['currentActiveUser'] = $credential;
-        $_SESSION['SweetAlert'] = new SweetAlert("เข้าสู่ระบบสำเร็จ", "ยินดีต้อนรับ! " . $credential->getName(), SweetAlert::SUCCESS);
+        $_SESSION['SweetAlert'] = new SweetAlert("Login Successful", "Welcome! " . $credential->getName(), SweetAlert::SUCCESS);
         
         if (isset($_POST['referent'])) {
             header("Location: ". $_POST['referent']);
@@ -24,9 +24,9 @@ if (isset($_POST['authLoginFormHandshake']) && isset($_POST['authLoginForm_usern
 }
 
 if (isset($_POST['authRegForm_submit'])) {
-    $pass = md5($_POST['authRegForm_password']);
-    $name = $_POST['authRegForm_name'];
-    $email = $_POST['authRegForm_email'];
+    $pass = md5(xss_clean($_POST['authRegForm_password']));
+    $name = xss_clean($_POST['authRegForm_email']);
+    $email = xss_clean($_POST['authRegForm_email']);
     $role = "guest";
 
     $id = latestIncrement($db["table"], 'user');
@@ -34,20 +34,20 @@ if (isset($_POST['authRegForm_submit'])) {
     if ($stmt = $conn->prepare("SELECT * FROM `user` WHERE email = ?")) {
         $stmt->bind_param('s', $email);
         if (!$stmt->execute()) {
-            $_SESSION['auth_error'] = "พบข้อผิดพลาด: " . PresetMessage::DATABASE_QUERY . "\n" . $conn->error;
+            $_SESSION['auth_error'] = "Error: " . PresetMessage::DATABASE_QUERY . "\n" . $conn->error;
             print_r($conn->error);
             header("Location: ../../../register/");
             die();
         } else {
             $result = $stmt->get_result();
             if ($result->num_rows > 0) {
-                $_SESSION['auth_error'] = "อีเมลนี้ถูกใช้งานไปแล้ว";
+                $_SESSION['auth_error'] = "This email is already registered.";
                 header("Location: ../../../register/");
                 die();
             }
         }
     } else {
-        $_SESSION['auth_error'] = "พบข้อผิดพลาด: " . PresetMessage::DATABASE_ESTABLISH . " : " . $conn->error;
+        $_SESSION['auth_error'] = "Error: " . PresetMessage::DATABASE_ESTABLISH . " : " . $conn->error;
         echo "Can't establish database";
         header("Location: ../../../register/");
         die();
@@ -56,7 +56,7 @@ if (isset($_POST['authRegForm_submit'])) {
     if ($stmt = $conn->prepare("INSERT INTO `user` (password, name, email, role) VALUES (?,?,?,?)")) {
         $stmt->bind_param('ssss',$pass,$name,$email,$role);
         if (!$stmt->execute()) {
-            $_SESSION['auth_error'] = "พบข้อผิดพลาด: " . PresetMessage::DATABASE_QUERY . "\n" . $conn->error;
+            $_SESSION['auth_error'] = "Error: " . PresetMessage::DATABASE_QUERY . "\n" . $conn->error;
             print_r($conn->error);
             header("Location: ../../../register/");
             die();
@@ -64,13 +64,13 @@ if (isset($_POST['authRegForm_submit'])) {
             unset($_SESSION['auth_error']);
             unset($_SESSION['auth_attempt']);
             $credential = new User((int) $id);
-            $_SESSION['SweetAlert'] = new SweetAlert("สมัครบัญชีผู้ใช้งานสำเร็จ!", "ยินดีต้อนรับ! " . $credential->getName());
+            $_SESSION['SweetAlert'] = new SweetAlert("Registration Successful!", "Welcome! " . $credential->getName());
             $_SESSION['currentActiveUser'] = $credential;
             header("Location: ../../../");
             //header("Location: ../verify/mail.php?key=" . $pass . "&email=" . $email . "&name=" . $_SESSION['name']->getName() . "&method=reg");
         }
     } else {
-        $_SESSION['auth_error'] = "พบข้อผิดพลาด: " . PresetMessage::DATABASE_ESTABLISH . " : " . $conn->error;
+        $_SESSION['auth_error'] = "Error: " . PresetMessage::DATABASE_ESTABLISH . " : " . $conn->error;
         echo "Can't establish database";
         header("Location: ../../../register/");
         die();
@@ -85,7 +85,7 @@ if (isset($_GET['user']) && isset($_GET['pass'])) {
     $credential = login($user, $pass);
     if (!empty($credential)) {
         $_SESSION['currentActiveUser'] = $credential;
-        $_SESSION['SweetAlert'] = new SweetAlert("เข้าสู่ระบบสำเร็จ", "ยินดีต้อนรับ! " . $credential->getName(), SweetAlert::SUCCESS);
+        $_SESSION['SweetAlert'] = new SweetAlert("Login Successful", "Welcome! " . $credential->getName(), SweetAlert::SUCCESS);
         
         if (isset($_GET['method'])) {
             if ($_GET['method'] == "reset") {

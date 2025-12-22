@@ -69,7 +69,7 @@
 <meta name="twitter:card" content="summary"></meta>
 <link rel="image_src" href="<?php echo $og['logo']; ?>" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="<?php echo $current_url; ?>" />
+<meta property="og:url" content="<?php echo xss_clean($current_url); ?>" />
 
 <link rel="stylesheet" href="/static/library/fontawesome-free-6.2.1-web/css/all.min.css"/>
 <link rel="stylesheet" href="/static/library/bootstrap-4.6.1-dist/css/bootstrap.min.css"/>

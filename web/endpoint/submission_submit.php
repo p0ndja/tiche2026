@@ -1,6 +1,8 @@
 <?php 
     require_once '../static/function/connect.php';
     require_once '../static/function/mail/sender.php';
+    needLogin();
+    $userId = getUser()->getID();
     $phpFileUploadErrors = array(
         0 => 'There is no error, the file uploaded with success',
         1 => 'The uploaded file exceeds the upload_max_filesize directive in php.ini',
@@ -74,9 +76,9 @@
             if ($stmt = $conn->prepare("INSERT INTO submission (
                 sub_fullName, sub_affiliation, sub_email,
                 sub_co_fullName, sub_co_affiliation, sub_co_email,
-                sub_title, sub_abstract, sub_category, sub_type, sub_file)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
-                $stmt->bind_param('sssssssssss', $sub_fullName, $sub_affiliation, $sub_email, $sub_co_fullName, $sub_co_affiliation, $sub_co_email, $sub_title, $sub_abstract, $sub_category, $sub_type, $sub_file_path);
+                sub_title, sub_abstract, sub_category, sub_type, sub_file, user_id)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+                $stmt->bind_param('sssssssssssi', $sub_fullName, $sub_affiliation, $sub_email, $sub_co_fullName, $sub_co_affiliation, $sub_co_email, $sub_title, $sub_abstract, $sub_category, $sub_type, $sub_file_path, $userId);
                 if (!$stmt->execute()) {
                     $conn->close();
                     $_SESSION['SweetAlert'] = new SweetAlert("Error", "Error: " . $conn->error, SweetAlert::ERROR);

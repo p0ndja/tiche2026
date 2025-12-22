@@ -1,6 +1,8 @@
 <?php 
     require_once '../static/function/connect.php';
     require_once '../static/function/mail/sender.php';
+    needLogin();
+    $userId = getUser()->getID();
     $phpFileUploadErrors = array(
         0 => 'There is no error, the file uploaded with success',
         1 => 'The uploaded file exceeds the upload_max_filesize directive in php.ini',
@@ -98,8 +100,8 @@
     ));
 
     // Insert data into the database
-    if ($stmt = $conn->prepare("INSERT INTO school_submission (id, data) VALUES (?, ?)")) {
-        $stmt->bind_param('is', $id, $data);
+    if ($stmt = $conn->prepare("INSERT INTO school_submission (id, data, user_id) VALUES (?, ?, ?)")) {
+        $stmt->bind_param('isi', $id, $data, $userId);
         if (!$stmt->execute()) {
             $conn->close();
             $_SESSION['SweetAlert'] = new SweetAlert("Error", "Error: " . $conn->error, SweetAlert::ERROR);

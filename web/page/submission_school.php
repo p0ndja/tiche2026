@@ -7,6 +7,7 @@
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 </head>
 <?php require_once '../static/function/navigation/navbar.php'; ?>
+<?php needLogin(); ?>
 <body>
     <div class="container mb-3">
         <div class="row">
@@ -35,9 +36,9 @@
                 <p>
                 <b>Submission Deadlines and Competition Date:</b>
                 <ul>
-                <li>Schools must submit the student names, project title, supervising teacher's name, and project description (in English, not exceeding 250 words) by <b>April 30, 2026.</b></li>
-                <li>Announcement of selected projects for the competition will be made by <b><i>*to be announced date*</i>.</b></li>
-                <li>TIChE High School Project Contest 2026 will take place on <b><i>*to be announced date*</i></b>, at Dusit Thani Hotel, Pattaya, Chonburi.</li>
+                <li>Schools must submit the student names, project title, supervising teacher's name, and project description (in English, not exceeding 250 words) by <b>February 28, 2026.</b></li>
+                <li>Announcement of selected projects for the competition will be made by <b>March 30, 2026.</b></li>
+                <li>TIChE High School Project Contest 2026 will take place on <b>June 10, 2026</b>, at Dusit Thani Hotel, Pattaya, Chonburi.</li>
                 </ul>
                 </p>
                 <p><b>Additional Information (in Thai):</b></p>

@@ -3,6 +3,10 @@
     require_once 'init.php';
     require_once 'connect.php';
 
+    function getUser() {
+        return (isLogin()) ? $_SESSION['currentActiveUser'] : null;
+    }
+
     //protect from cross-site scripting
     function xss_clean($data) {
         return htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
@@ -773,18 +777,11 @@
         return preg_replace('/[^A-Za-z0-9\-\_\.]/', '_', $filename);
     }
 ?><?php function needLogin() {
-    if (!isLogin()) {?>
-<script>
-    swal({
-        title: "ACCESS DENIED",
-        text: "You need to logged-in!",
-        icon: "error"
-    }).then(function () {
-        <?php $_SESSION['auth_error'] = "กรุณาเข้าสู่ระบบก่อนดำเนินการต่อ"; ?>
-        window.location = "../login/";
-    });
-</script>
-<?php die(); }} ?><?php function needPermission($perm) {
+    if (!isLogin()) {
+        $_SESSION['auth_error'] = "Please login before continuing the process";
+        header("Location: ../login/");
+        die();
+    }} ?><?php function needPermission($perm) {
     if (!isLogin()) { needLogin(); die(); }
     if (!isAdmin()) { ?>
 <script>

@@ -7,6 +7,7 @@
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 </head>
 <?php require_once '../static/function/navigation/navbar.php'; ?>
+<?php needLogin(); ?>
 <body>
     <div class="container mb-3">
         <div class="row">
@@ -36,8 +37,8 @@
                 <p>
                 <b>Submission Deadlines and Competition Date:</b>
                 <ul>
-                    <li>Department must submit two projects, along with a list of up to four students and the name of a faculty member serving as a committee, by <b>April 30, 2026.</b></li>
-                    <li>The competition will be held on <b><i>*to be announced date*</i></b>, with sessions scheduled for both the morning and afternoon.</li>
+                    <li>Department must submit two projects, along with a list of up to four students and the name of a faculty member serving as a committee, by <b>February 28, 2026.</b></li>
+                    <li>The competition will be held on <b>June 9, 2026</b>, with sessions scheduled for both the morning and afternoon.</li>
                 </ul>
                 </p>
                 <p><b>Additional Information (in Thai):</b></p>

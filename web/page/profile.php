@@ -17,7 +17,10 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12 col-md-4 mb-3">
-                            <div class="px-5 py-3">
+                            <div class="mx-auto">
+                                <img src="/static/asset/upload/TIChE2026 Logo_1.png" class="img-fluid w-100" loading="lazy" id="profile_preview">
+                            </div>
+                            <div class="px-5 py-3 d-none">
                                 <img class="img-fluid w-100" loading="lazy" src="<?php echo $_SESSION['currentActiveUser']->getProfile(); ?>" id="profile_preview">
                                 <input type="file" name="profile_upload" id="profile_upload"
                                         class="form-control-file validate mt-1 mb-1" accept="image/png, image/jpeg, image/webp">

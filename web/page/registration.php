@@ -7,6 +7,7 @@
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 </head>
 <?php require_once '../static/function/navigation/navbar.php'; ?>
+<?php needLogin(); ?>
 <body>
     <div class="container mb-3">
         <div class="row">
@@ -15,7 +16,7 @@
             </div>
             <?php $isClose = getDatatable("closeRegistration")["value"]; ?>
             <div class="col-12 col-lg-9">
-                <h2 class="font-weight-bold">REGISTRATION FOR TIChE2026</h2>
+                <h2 class="font-weight-bold">CONFERENCE REGISTRATION FOR TIChE2026</h2>
                 <hr>
                 <div>
                 <?php

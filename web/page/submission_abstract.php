@@ -7,6 +7,7 @@
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 </head>
 <?php require_once '../static/function/navigation/navbar.php'; ?>
+<?php needLogin(); ?>
 <body>
     <div class="container mb-3">
         <div class="row">

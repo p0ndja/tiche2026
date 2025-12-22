@@ -1,9 +1,12 @@
 <?php 
     require_once '../static/function/connect.php';
     require_once '../static/function/mail/sender.php';
+    needLogin();
 
-    header("Location: /registration/"); # hard redirect to registration page
-    die();
+    $userId = getUser()->getID();
+
+    // header("Location: /registration/"); # hard redirect to registration page
+    // die();
 
     global $conn;
     global $db;
@@ -23,21 +26,21 @@
 
     // if date is within 31 mar 2025, 23:59:59, the price is 5000 for early bird presentor, 3000 for early bird participant
     // else the price is 5500 for presentor, 3500 for participant
-    $price = 5500;
+    $price = 6000;
     $reg_category = xss_clean($_POST['reg_category']);
 
-    $earlyBird = strtotime("2025-04-01 00:00:05") > time();
+    $earlyBird = strtotime("2026-04-01 00:00:05") > time();
     if ($earlyBird) {
         if ($reg_category == "Presenter") {
             $price = 5000;
         } else if ($reg_category == "Participant") {
-            $price = 3000;
+            $price = 3500;
         }
     } else {
         if ($reg_category == "Presenter") {
-            $price = 5500;
+            $price = 6000;
         } else if ($reg_category == "Participant") {
-            $price = 3500;
+            $price = 4000;
         }
     }
 
@@ -50,8 +53,8 @@
     $reg_code = xss_clean($_POST['reg_code']);
     $reg_note = xss_clean($_POST['reg_note']);
 
-    if ($stmt = $conn->prepare("INSERT INTO registration (reg_fullName, reg_affiliation, reg_email, reg_phone, reg_code, reg_category, reg_note, reg_payment_amount) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")) {
-        $stmt->bind_param('sssssssi', $reg_fullName, $reg_affiliation, $reg_email, $reg_phone, $reg_code, $reg_category, $reg_note, $price);
+    if ($stmt = $conn->prepare("INSERT INTO registration (reg_fullName, reg_affiliation, reg_email, reg_phone, reg_code, reg_category, reg_note, reg_payment_amount, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+        $stmt->bind_param('sssssssii', $reg_fullName, $reg_affiliation, $reg_email, $reg_phone, $reg_code, $reg_category, $reg_note, $price, $userId);
         if (!$stmt->execute()) {
             $conn->close();
             $_SESSION['SweetAlert'] = new SweetAlert("Error", "Error: " . $conn->error, SweetAlert::ERROR);

@@ -11,7 +11,7 @@
         <div class="d-flex justify-content-center">
             <div class="container" id="container" style="padding-top: 20px; padding-bottom: 100px; width: 23rem;">
                 <form id="loginForm" method="post" action="../static/function/auth/login.php" enctype="multipart/form-data">
-                <h1 class="display-5 text-center font-weight-bold text-md">Login <i class="fas fa-sign-in-alt"></i></h1>
+                <h1 class="display-5 text-center font-weight-bold text-md">Account Authentication</h1>
                     <div class="card">
                         <!--Body-->
                         <div class="card-body mb-1">
@@ -33,7 +33,7 @@
                             <div class="text-center mt-2 text-muted">
                                 <a href="../forgetpassword/" class="text-danger">Forget Password</a><?php if (getConfig('allowRegister')) { ?>&nbsp;•&nbsp;<a href="../register/" class="text-md">Register</a><?php } ?>
                             </div>
-                            <input type="hidden" name="referent" value="<?php echo (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null); ?>">
+                            <input type="hidden" name="referent" value="<?php echo (isset($_SERVER['HTTP_REFERER']) ? xss_clean($_SERVER['HTTP_REFERER']) : null); ?>">
                         </div>
                     </div>
                 </form>

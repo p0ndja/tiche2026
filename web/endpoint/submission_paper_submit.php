@@ -1,6 +1,8 @@
 <?php 
     require_once '../static/function/connect.php';
     require_once '../static/function/mail/sender.php';
+    needLogin();
+    $userId = getUser()->getID();
     $phpFileUploadErrors = array(
         0 => 'There is no error, the file uploaded with success',
         1 => 'The uploaded file exceeds the upload_max_filesize directive in php.ini',
@@ -67,8 +69,8 @@
     }
     if (in_array($sub_file_ext, $sub_file_allowed)) {
         if (move_uploaded_file($sub_file_tmp, $sub_file_path)) {
-            if ($stmt = $conn->prepare("INSERT INTO paper_submission (sub_typeOfPaper, sub_fullName, sub_affiliation, sub_email, sub_co_fullName, sub_co_affiliation, sub_co_email, sub_title, sub_code, sub_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
-                $stmt->bind_param("ssssssssss", $sub_typeOfPaper, $sub_fullName, $sub_affiliation, $sub_email, $sub_co_fullName, $sub_co_affiliation, $sub_co_email, $sub_title, $sub_code, $sub_file_path);
+            if ($stmt = $conn->prepare("INSERT INTO paper_submission (sub_typeOfPaper, sub_fullName, sub_affiliation, sub_email, sub_co_fullName, sub_co_affiliation, sub_co_email, sub_title, sub_code, sub_file, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+                $stmt->bind_param("ssssssssssi", $sub_typeOfPaper, $sub_fullName, $sub_affiliation, $sub_email, $sub_co_fullName, $sub_co_affiliation, $sub_co_email, $sub_title, $sub_code, $sub_file_path, $userId);
                 if (!$stmt->execute()) {
                     $conn->close();
                     $_SESSION['SweetAlert'] = new SweetAlert("Error", "Error: " . $conn->error, SweetAlert::ERROR);

@@ -1,11 +1,12 @@
 <?php require_once '../static/function/connect.php'; ?>
-<script>function logoutBtn() { swal({title:"ออกจากระบบ ?",text:"คุณต้องการออกจากระบบหรือไม่?",icon:"warning",buttons:true,dangerMode:true}).then((willDelete) => {if (willDelete) window.location = "../logout/";}); }</script>
+<script>function logoutBtn() { swal({title:"Sign out ?",text:"Are you sure you want to sign out?",icon:"warning",buttons:true,dangerMode:true}).then((willDelete) => {if (willDelete) window.location = "../logout/";}); }</script>
 <?php if (isLogin()) { ?>
 <div style="position: fixed; top: 0px; width: 100%; z-index: 1000;">
     <div class="navbar-color-user">
         <div class="d-flex justify-content-between p-2">    
             <div class="flex-grow-1 font-weight-bold text-dark">Welcome, <?php echo $_SESSION['currentActiveUser']->getEmail(); ?></div>
-            <a href="/profile/" class="px-2 text-dark">Profile</a>
+            <a href="/submission/" class="px-2 text-dark">Submission</a>
+            <a href="/profile/" class="px-2 text-dark">User</a>
             <a href="javascript:logoutBtn();" class="px-2 text-dark">Logout</a>
         </div>
     </div>
@@ -79,7 +80,7 @@
                     <a class="nav-link px-2 px-xl-3 py-2" href="/submission/full-paper">Full Paper Submission</a>
                 </li>
                 <li class="nav-item navbar-border-right">
-                    <a class="nav-link px-2 px-xl-3 py-2" href="/registration/">Registration <!--<sup><span class="badge badge-danger">CLOSED</span></sup>--></a>
+                    <a class="nav-link px-2 px-xl-3 py-2" href="/registration/">Conference Registration <!--<sup><span class="badge badge-danger">CLOSED</span></sup>--></a>
                 </li>
                 <li class="nav-item navbar-border-right">
                     <a class="nav-link px-2 px-xl-3 py-2" href="/post/4">Presentation Guideline</a>

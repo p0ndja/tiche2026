@@ -9,20 +9,21 @@
         <?php if (isLogin() || !getConfig('allowRegister')) home(); ?>
         <div class="d-flex justify-content-center">
             <div class="container" id="container" style="padding-top: 20px; width: 23rem;">
-                <h1 class="display-5 text-center text-md font-weight-bold">Register <i class="far fa-edit"></i></h1>
-                <div class="card mb-3">
+                <h1 class="display-5 text-center text-md font-weight-bold">Account Registration</h1>
+                <div class="card mb-5">
                     <form id="regForm" method="post" action="../static/function/auth/login.php" enctype="multipart/form-data" autocomplete="off">
                         <!--Body-->
+                        <div class="card-header text-center"><small>This will create an account for submission,<br><u class='text-danger'>NOT</u> the conference registration.<br>For the conference registration, <a href="/registration">[click here]</a>.</small></div>
                         <div class="card-body mb-1">
                             <?php if (isset($_SESSION['auth_error'])) { echo '<div class="alert alert-danger" role="alert">'.$_SESSION['auth_error'].'</div>'; $_SESSION['auth_error'] = null; } ?>
-                            <div class="md-form form-sm mb-1">
+                            <!-- <div class="md-form form-sm mb-1">
                                 <i class="fas fa-user prefix text-md"></i>
                                 <input type="text" name="authRegForm_name" id="authRegForm_name" class="form-control form-control-sm validate" required>
                                 <label for="authRegForm_name" class="text-md">Name</label>
-                            </div>
-                            <div class="md-form form-sm mb-1">
+                            </div> -->
+                            <div class="md-form form-sm mb-1 mt-1">
                                 <i class="fas fa-envelope prefix text-md"></i>
-                                <input type="email" name="authRegForm_email" id="authRegForm_email" class="form-control form-control-sm validate" required>
+                                <input type="email" name="authRegForm_email" id="authRegForm_email" class="form-control form-control-sm validate mb-1" required>
                                 <label for="authRegForm_email" class="text-md">Email</label>
                             </div>
                             <div class="md-form form-sm mb-1">
@@ -37,10 +38,10 @@
                                 <label for="authRegForm_confirmpassword" class="text-md">Confirm Password</label>
                                 <div class="text-center"><small class="text-danger" id="cfpwAlert"></small></div>
                             </div>
-                            <div class="cf-turnstile mb-4" data-theme="light" data-sitekey="0x4AAAAAABh0HRZB4iCc89in"></div>
+                            <div class="cf-turnstile mb-3 mt-4" data-theme="light" data-sitekey="0x4AAAAAABh0HRZB4iCc89in"></div>
                             <button class="btn btn-block btn-c-md font-weight-bold mt-3" type="submit" name="authRegForm_submit">Register</button>
                             <div class="text-center mt-2 text-muted"><a href="../forgetpassword/" class="text-danger">Forget Password</a>&nbsp;•&nbsp;<a href="../login/" class="text-md">Login</a></div>
-                            <input type="hidden" name="referent" value="<?php echo (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null); ?>">
+                            <input type="hidden" name="referent" value="<?php echo (isset($_SERVER['HTTP_REFERER']) ? xss_clean($_SERVER['HTTP_REFERER']) : null); ?>">
                         </div>
                     </form>
                 </div>
@@ -66,13 +67,13 @@
             function passwordValidation() {
                 if (pw.value !== "") {
                     if (pw.value.length < 6) {
-                        pwAl.innerHTML = "รหัสต้องมีความยาว 6 ตัวอักษรขึ้นไป";
+                        pwAl.innerHTML = "Password must have 6 characters or more";
                         pwinvalid();
                     } else {
                         pwvalidateclear();
                         pwAl.innerHTML = null;
                         if (pw.value != pwc.value) {
-                            cfpwAl.innerHTML = "โปรดตรวจสอบความถูกต้อง";
+                            cfpwAl.innerHTML = "Passwords do not match";
                             pwinvalid();
                         } else {
                             cfpwAl.innerHTML = null;
@@ -111,7 +112,7 @@
             document.querySelector("#userEditForm").addEventListener("submit", function(event) {
                 if (!validPassword) {
                     event.preventDefault();
-                    swal("Oops","โปรดตรวจสอบรหัสผ่านที่กรอกอีกครั้ง", "error");
+                    swal("Oops","Please check the password you entered again", "error");
                 }
             });
         </script>
