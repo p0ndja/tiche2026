@@ -16,6 +16,20 @@
             </div>
             <div class="col-12 col-lg-9">
                 <h3 class="font-weight-bold">TIChE SENIOR PROJECT CONTEST 2026</h3>
+                <?php
+                    if (!isAdmin()) {
+                        $userId = (int) getUser()->getID();
+                        if ($stmt = $conn->prepare("SELECT COUNT(*) FROM senior_submission WHERE user_id = $userId")) {
+                            $stmt->execute();
+                            $stmt->bind_result($count);
+                            $stmt->fetch();
+                            if ($count > 0) {
+                                echo '<div class="alert alert-info">You have already submitted a project. See <a href="/submission-senior/list">[all your submission]</a>.</div>';
+                            }
+                            $stmt->close();
+                        }
+                    }
+                ?>
                 <hr>
                 <p>TIChE Senior Project Contest 2026 is one of the key events at TIChE2026, a competition showcasing outstanding undergraduate research in chemical engineering and applied chemistry across universities in Thailand. It provides students with a platform to present their innovative projects and gain recognition for their work.</p>
                 <p>

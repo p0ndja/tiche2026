@@ -1,11 +1,6 @@
 <?php
     require_once '../static/function/connect.php';
-    if (!isAdmin()) {
-        header('Location: /');
-        exit();
-    }
-
-    $submission_id = $_GET['id'];
+    $submission_id = xss_clean($_GET['id']);
 
     $stmt = $conn->prepare("SELECT * FROM school_submission WHERE id = ?");
     $stmt->bind_param("s", $submission_id);
@@ -20,6 +15,10 @@
         $rrr = $r;
     }
     $stmt->close();
+    if (!isAdmin() && (!isLogin() || $rrr['user_id'] != getUser()->getID())) {
+        header('Location: /');
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="th" prefix="og:http://ogp.me/ns#">

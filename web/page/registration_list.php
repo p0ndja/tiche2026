@@ -1,8 +1,4 @@
 <?php require_once '../static/function/connect.php'; ?>
-<?php if (!isAdmin()) {
-    header('Location: /');
-    exit();
-} ?>
 <!DOCTYPE html>
 <html lang="th" prefix="og:http://ogp.me/ns#">
 <head>
@@ -11,6 +7,7 @@
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 </head>
 <?php require_once '../static/function/navigation/navbar.php'; ?>
+<?php needLogin(); ?>
 <body>
     <div class="container mb-3">
         <div class="row">
@@ -33,7 +30,8 @@
                         </thead>
                         <tbody>
                             <?php
-                                if ($stmt = $conn->prepare('SELECT `reg_id` as `id`, `reg_fullName` as `author`, `reg_code` as `abstract`, `reg_timestamp` as `submitDate`, `reg_category` as `type`, `reg_payment_amount` as `payment`, `reg_payment_timestamp` as `paid` FROM registration ORDER BY reg_timestamp DESC')) {
+                                $extraCondition = (isAdmin()) ? "" : " WHERE user_id = ".getUser()->getID();
+                                if ($stmt = $conn->prepare('SELECT `reg_id` as `id`, `reg_fullName` as `author`, `reg_code` as `abstract`, `reg_timestamp` as `submitDate`, `reg_category` as `type`, `reg_payment_amount` as `payment`, `reg_payment_timestamp` as `paid` FROM registration '.$extraCondition.' ORDER BY reg_timestamp DESC')) {
                                     $stmt->execute();
                                     $result = $stmt->get_result();
                                     if ($result->num_rows > 0) {

@@ -16,6 +16,20 @@
             </div>
             <div class="col-12 col-lg-9">
                 <h3 class="font-weight-bold">TIChE HIGH SCHOOL PROJECT CONTEST 2026</h3>
+                <?php
+                    if (!isAdmin()) {
+                        $userId = (int) getUser()->getID();
+                        if ($stmt = $conn->prepare("SELECT COUNT(*) FROM school_submission WHERE user_id = $userId")) {
+                            $stmt->execute();
+                            $stmt->bind_result($count);
+                            $stmt->fetch();
+                            if ($count > 0) {
+                                echo '<div class="alert alert-info">You have already submitted a project. See <a href="/submission-school/list">[all your submission]</a>.</div>';
+                            }
+                            $stmt->close();
+                        }
+                    }
+                ?>
                 <hr>
                 <p>TIChE High School Project Contest 2026 is a highlight of TIChE2026, providing a dedicated platform to inspire young scientific minds at the high school level. This <b>poster competition</b> fosters curiosity, creativity, and innovation in chemical sciences and engineering, encouraging students to showcase their research and apply their scientific knowledge in impactful ways.</p>
                 <p>

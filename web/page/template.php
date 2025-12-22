@@ -9,7 +9,6 @@
 <?php require_once '../static/function/navigation/navbar.php'; ?>
 <body>
     <div class="container mb-3">
-        <?php echo xss_clean("palapon2545@gmail.com"); ?>
     </div>
     <?php require_once '../static/function/popup.php'; ?>
     <?php require_once '../static/function/navigation/footer.php'; ?>

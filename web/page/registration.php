@@ -17,6 +17,20 @@
             <?php $isClose = getDatatable("closeRegistration")["value"]; ?>
             <div class="col-12 col-lg-9">
                 <h2 class="font-weight-bold">CONFERENCE REGISTRATION FOR TIChE2026</h2>
+                <?php
+                    if (!isAdmin()) {
+                        $userId = (int) getUser()->getID();
+                        if ($stmt = $conn->prepare("SELECT COUNT(*) FROM registration WHERE user_id = $userId")) {
+                            $stmt->execute();
+                            $stmt->bind_result($count);
+                            $stmt->fetch();
+                            if ($count > 0) {
+                                echo '<div class="alert alert-info">You have already registered to the conference. See <a href="/registration/list">[all your registrations]</a>.</div>';
+                            }
+                            $stmt->close();
+                        }
+                    }
+                ?>
                 <hr>
                 <div>
                 <?php

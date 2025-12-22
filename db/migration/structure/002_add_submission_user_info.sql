@@ -5,3 +5,4 @@ ALTER TABLE submission ADD COLUMN user_id INT NULL AFTER sub_timestamp;
 ALTER TABLE paper_submission ADD COLUMN user_id INT NULL AFTER sub_timestamp;
 ALTER TABLE school_submission ADD COLUMN user_id INT NULL AFTER sub_timestamp;
 ALTER TABLE senior_submission ADD COLUMN user_id INT NULL AFTER sub_timestamp;
+ALTER TABLE registration ADD COLUMN user_id INT NULL AFTER reg_id;

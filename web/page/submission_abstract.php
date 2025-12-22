@@ -16,6 +16,20 @@
             </div>
             <div class="col-12 col-lg-9">
                 <h3 class="font-weight-bold">ABSTRACT SUBMISSION</h3>
+                <?php
+                    if (!isAdmin()) {
+                        $userId = (int) getUser()->getID();
+                        if ($stmt = $conn->prepare("SELECT COUNT(*) FROM submission WHERE user_id = $userId")) {
+                            $stmt->execute();
+                            $stmt->bind_result($count);
+                            $stmt->fetch();
+                            if ($count > 0) {
+                                echo '<div class="alert alert-info">You have already submitted an abstract. See <a href="/submission-abstract/list">[all your submission]</a>.</div>';
+                            }
+                            $stmt->close();
+                        }
+                    }
+                ?>
                 <hr>
                 <div class="card">
                     <div class="card-body">
