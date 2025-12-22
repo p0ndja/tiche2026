@@ -24,8 +24,8 @@
         die();
     }
 
-    // if date is within 31 mar 2025, 23:59:59, the price is 5000 for early bird presentor, 3000 for early bird participant
-    // else the price is 5500 for presentor, 3500 for participant
+    // if date is within 31 mar 2026, 23:59:59, the price is 5000 for early bird presentor, 3500 for early bird participant
+    // else the price is 6000 for presentor, 4000 for participant
     $price = 6000;
     $reg_category = xss_clean($_POST['reg_category']);
 
@@ -63,7 +63,7 @@
         } else {
             sendEmail(
                 $reg_email,
-                "TIChE 2025 Registration - $reg_fullName",
+                "TIChE 2026 Registration - $reg_fullName",
                 "https://tiche2026.ubu.ac.th/static/function/mail/template/registration_payment.html",
                 array("name"=>$reg_fullName, "date"=>date("Y-m-d H:i:s", time()), "id"=>sprintf("%06d", $id)));
             $conn->close();

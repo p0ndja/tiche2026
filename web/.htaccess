@@ -16,6 +16,8 @@ RewriteRule ^download/$ page/download.php
 RewriteRule ^department/$ page/department.php
 RewriteRule ^facility/$ page/facility.php
 
+RewriteRule ^gateway/$ page/submission_gateway.php [L]
+
 RewriteRule ^COVID19-drug-delivery/$ page/COVID19_drug_delivery.php
 RewriteRule ^HRD/$ page/HRD.php [L]
 

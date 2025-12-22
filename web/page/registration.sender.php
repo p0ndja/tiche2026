@@ -30,7 +30,7 @@ else if (checkStatus(sprintf("%06d", $id)) == true) {
     $stmt->execute();
     sendEmail(
         $row['reg_email'],
-        "TIChE 2025 Registration Confirmation - $name",
+        "TIChE 2026 Registration Confirmation - $name",
         "https://tiche2026.ubu.ac.th/static/function/mail/template/registration_success.html",
         array("name"=>$name, "date"=>date("Y-m-d H:i:s", time()), "id"=>sprintf("%06d", $id)));
     $paid = true;
@@ -38,8 +38,8 @@ else if (checkStatus(sprintf("%06d", $id)) == true) {
     die();
 }
 
-//check if they reach this page within time? (1 April 2025, 23:59:59)
-if ($earlybird && (strtotime(date("Y-m-d H:i:s")) > strtotime("2025-04-02 00:00:05"))) {
+//check if they reach this page within time? (1 April 2026, 23:59:59)
+if ($earlybird && (strtotime(date("Y-m-d H:i:s")) > strtotime("2026-04-02 00:00:05"))) {
     if ($price == 3000)
         $price = 3500;
     else if ($price == 5000)

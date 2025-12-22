@@ -42,7 +42,7 @@
                     <thead>
                         <tr>
                             <th scope="col" style="background-color: var(--ubu-blue); color: white; vertical-align: middle;"><b>REGISTRATION FEE</b></th>
-                            <th scope="col" style="background-color: var(--ubu-blue); color: white; vertical-align: middle;"><center><b>Early Registration<br><small>until March 31, 2025</small></b></center></th>
+                            <th scope="col" style="background-color: var(--ubu-blue); color: white; vertical-align: middle;"><center><b>Early Registration<br><small>until March 31, 2026</small></b></center></th>
                             <th scope="col" style="background-color: var(--ubu-blue); color: white; vertical-align: middle;"><center><b>Regular Registration</b></center></th>
                         </tr>
                     </thead>
@@ -60,7 +60,7 @@
                     </tbody>
                 </table>
                 <p>
-                <span class="text-danger font-weight-bold">Please note that payment for early registration rate must be completed by April 1, 2025 (GMT+7, Server time).</span> Otherwise the registration fee will raising to the regular registration rates.<br>
+                <span class="text-danger font-weight-bold">Please note that payment for early registration rate must be completed by April 1, 2026 (GMT+7, Server time).</span> Otherwise the registration fee will raising to the regular registration rates.<br>
                 TIChE reserve the right not to extend the early registration deadline and rates for any reason.
                 <br>
                 <br><b>Download: <a href="/static/asset/upload/หนังสืออนุมัติเข้าร่วมประชุม%20โดยไม่ถือเป็นวันลา.pdf" target="_blank">หนังสืออนุมัติเข้าร่วมประชุม โดยไม่ถือเป็นวันลา</a></b>

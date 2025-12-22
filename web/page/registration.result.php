@@ -30,7 +30,7 @@ else if (checkStatus(sprintf("%06d", $id)) == true) {
     $stmt->execute();
     sendEmail(
         $row['reg_email'],
-        "TIChE 2025 Registration Confirmation - $name",
+        "TIChE 2026 Registration Confirmation - $name",
         "https://tiche2026.ubu.ac.th/static/function/mail/template/registration_success.html",
         array("name"=>$name, "date"=>date("Y-m-d H:i:s", time()), "id"=>sprintf("%06d", $id)));
     $paid = true;
@@ -62,9 +62,9 @@ $stmt->close();
                         <div class="alert alert-warning">
                             <strong>Payment pending!</strong> Your registration is not yet completed.
                         </div>
-                        <?php if ($earlybird && strtotime(date("Y-m-d H:i:s")) < strtotime("2025-04-01 23:59:59")) { ?>
+                        <?php if ($earlybird && strtotime(date("Y-m-d H:i:s")) < strtotime("2026-04-01 23:59:59")) { ?>
                         <div class="alert alert-danger text-left">
-                            <span class="text-danger font-weight-bold">The payment for early registration rate must be completed by April 1, 2025 (GMT+7, Server time).</span> Otherwise the registration fee will raising to the regular registration rates.<br>
+                            <span class="text-danger font-weight-bold">The payment for early registration rate must be completed by April 1, 2026 (GMT+7, Server time).</span> Otherwise the registration fee will raising to the regular registration rates.<br>
                             TIChE reserve the right not to extend the early registration deadline and rates for any reason.<br>
                         </div>
                         <?php } ?>
@@ -75,7 +75,7 @@ $stmt->close();
                 <p>Registration ID: <strong><?php echo sprintf("%06d", $id); ?></strong></p>
                 <p>Name: <strong><?php echo $name; ?></strong></p>
                 <p>Amount: <strong>THB <?php echo number_format($price, 2); ?></strong><br>
-                <?php if ($earlybird) { ?><small>(Secure your early registration rate by completing the payment before April 1, 2025 (GMT+7, Server time)</small><?php } ?>
+                <?php if ($earlybird) { ?><small>(Secure your early registration rate by completing the payment before April 1, 2026 (GMT+7, Server time)</small><?php } ?>
                 </p>
                 <?php if (!$paid) { ?>
                 <h5 class="font-weight-bold">Please proceed to payment to complete your registration.</h5>
