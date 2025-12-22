@@ -24,12 +24,13 @@
                 </a>
             </div>
             <div class="col-12 col-lg-4 col-md-12">
-                <a href="/submission-paper/list" class="md-dark">
+                <a href="#/submission-paper/list" class="md-dark">
                     <div class="card navbar-color-three mb-3" style="min-height: 160px">
                         <div class="card-body">
                             <span class="display-6 badge white mb-3 z-depth-1 p-0 m-0">
                                 <i class="fa-solid fa-file-circle-check p-2 m-2 text-dark" style="font-size: 30px;"></i>
-                            </span>
+                            </span>&nbsp;
+                            <div class="badge badge-danger text-white">Not Available Yet</div>
                             <br>
                             <text class="display-8 font-weight-bold text-white font-bai-jamjuree">Full Paper Submission</text>
                         </div>
