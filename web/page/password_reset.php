@@ -7,8 +7,8 @@
 <?php require_once '../static/function/navigation/navbar.php'; ?>
 <body>
     <?php if (!isset($_SESSION['allowAccessResetpasswordPage']) || $_SESSION['allowAccessResetpasswordPage'] == false) back(); ?>
-    <div class="container" id="container">
-        <div class="center">
+    <div class="d-flex justify-content-center">
+        <div class="container" id="container" style="padding-top: 20px; padding-bottom: 100px; width: 23rem;">
             <form id="resetForm" method="post" action="../endpoint/password_resetpass.php" enctype="multipart/form-data" autocomplete="off">
                 <h1 class="display-5 font-weight-bold text-center text-md">Setting New Password <i class="fas fa-lock"></i></h1>
                 <div class="card">
@@ -18,7 +18,7 @@
                         <div class="md-form form-sm mb-3">
                             <i class="fas fa-key prefix text-md"></i>
                             <input type="password" name="setNewPassword" id="setNewPassword" class="form-control form-control-sm validate" required>
-                            <label for="setNewPassword" class="text-md">รหัสผ่านใหม่</label>
+                            <label for="setNewPassword" class="text-md">New Password</label>
                         </div>
                         <div class="cf-turnstile mb-4" data-theme="light" data-sitekey="0x4AAAAAABh0HRZB4iCc89in"></div>
                         <button class="btn btn-md btn-c-md btn-block font-weight-bold" type="submit" name="resetPassword" value="รีเซ็ต">Set New Password</button>
