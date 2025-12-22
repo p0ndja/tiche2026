@@ -5,7 +5,7 @@
     <div class="navbar-color-user">
         <div class="d-flex justify-content-between p-2">    
             <div class="flex-grow-1 font-weight-bold text-dark">Welcome, <?php echo $_SESSION['currentActiveUser']->getEmail(); ?></div>
-            <a href="/submission/" class="px-2 text-dark">Submission</a>
+            <a href="/gateway/" class="px-2 text-dark">Submission</a>
             <a href="/profile/" class="px-2 text-dark">User</a>
             <a href="javascript:logoutBtn();" class="px-2 text-dark">Logout</a>
         </div>
