@@ -22,6 +22,8 @@
                         <thead>
                             <tr>
                                 <th class="text-center">ID</th>
+                                <th class="text-center">Project Name</th>
+                                <th class="text-center">Category</th>
                                 <th class="text-center">Submit Date</th>
                             </tr>
                         </thead>
@@ -32,9 +34,16 @@
                                     $stmt->execute();
                                     $result = $stmt->get_result();
                                     if ($result->num_rows > 0) {
-                                        while ($row = $result->fetch_assoc()) { ?>
+                                        while ($row = $result->fetch_assoc()) { 
+                                            preg_match('/Name of Project.*?: (.*)/', $row['data'], $matches);
+                                            $projectName = $matches[1];
+                                            preg_match('/Project Competition Category.*?: (.*)/', $row['data'], $matches);
+                                            $category = $matches[1] ? $matches[1] : "N/A";
+                                            ?>
                                         <tr onmouseup="window.location.href = '/submission-senior/<?php echo $row['id']; ?>'" style="cursor: pointer">
                                         <td class="text-center"><a href="/submission-senior/<?php echo $row['id']; ?>"><?php echo $row['id']; ?></a></td>
+                                        <td class="text-left"><a href="/submission-senior/<?php echo $row['id']; ?>"><?php echo $projectName; ?></a></td>
+                                        <td class="text-center"><a href="/submission-senior/<?php echo $row['id']; ?>"><?php echo $category; ?></a></td>
                                         <td class="text-center"><?php echo $row['sub_timestamp']; ?></td>
                                         </tr>
                                     <?php }

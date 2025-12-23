@@ -82,15 +82,23 @@
                                 <label for="sub_facultyMember">Name of Faculty Member (Serving as Committee)</label>
                                 <input type="text" class="form-control" id="sub_facultyMember" name="sub_facultyMember">
                             </div>
+                            <div class="form-group">
+                                <label for="sub_category">Competition Category<span class="text-danger">*</span></label>
+                                <select class="form-control" id="sub_category" name="sub_category" required>
+                                    <option value="" disabled selected>Select Category</option>
+                                    <option value="Basic Research">Basic Research</option>
+                                    <option value="Applied Research">Applied Research</option>
+                                </select>
+                            </div>
 
-                            <h5 class="font-weight-bold mt-5 mb-0">BASIC RESEARCH (PROJECT 1)</h5>
+                            <h5 class="font-weight-bold mt-5 mb-0">PROJECT DETAILS</h5>
                             <hr>
                             <div class="form-group">
-                                <label for="sub_proj1_name">Name of Project 1<span class="text-danger">*</span></label>
+                                <label for="sub_proj1_name">Name of Project<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="sub_proj1_name" name="sub_proj1_name" required>
                             </div>
                             <div class="form-group">
-                                <label for="sub_proj1_abstract">Abstract of Project 1 (Maximum 250 words)<span class="text-danger">*</span></label>
+                                <label for="sub_proj1_abstract">Abstract of Project (Maximum 250 words)<span class="text-danger">*</span></label>
                                 <textarea class="form-control" id="sub_proj1_abstract" name="sub_proj1_abstract" required rows="5"></textarea>
                             </div>
                             <div class="form-group">
@@ -141,65 +149,7 @@
                                 <label for="sub_proj1_adv2_name_contact">Email / Telephone Number of Advisor 2</label>
                                 <input type="text" class="form-control" id="sub_proj1_adv2_name_contact" name="sub_proj1_adv2_name_contact">
                             </div>
-                            <h5 class="font-weight-bold mt-5 mb-0">APPLIED RESEARCH (PROJECT 2)</h5>
-                            <hr>
-                            <div class="form-group">
-                                <label for="sub_proj2_name">Name of Project 2<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="sub_proj2_name" name="sub_proj2_name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="sub_proj2_abstract">Abstract of Project 2 (Maximum 250 words)<span class="text-danger">*</span></label>
-                                <textarea class="form-control" id="sub_proj2_abstract" name="sub_proj2_abstract" required rows="5"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="sub_proj2_std1_name_th">Name of Student 1 (in Thai)</label>
-                                <input type="text" class="form-control" id="sub_proj2_std1_name_th" name="sub_proj2_std1_name_th">
-                            </div>
-                            <div class="form-group">
-                                <label for="sub_proj2_std1_name_en">Name of Student 1 (in English)</label>
-                                <input type="text" class="form-control" id="sub_proj2_std1_name_en" name="sub_proj2_std1_name_en">
-                            </div>
-                            <div class="form-group">
-                                <label for="sub_proj2_std1_name_contact">Email / Telephone Number of Student 1</label>
-                                <input type="text" class="form-control" id="sub_proj2_std1_name_contact" name="sub_proj2_std1_name_contact">
-                            </div>
-                            <div class="form-group">
-                                <label for="sub_proj2_std2_name_th">Name of Student 2 (in Thai)</label>
-                                <input type="text" class="form-control" id="sub_proj2_std2_name_th" name="sub_proj2_std2_name_th">
-                            </div>
-                            <div class="form-group">
-                                <label for="sub_proj2_std2_name_en">Name of Student 2 (in English)</label>
-                                <input type="text" class="form-control" id="sub_proj2_std2_name_en" name="sub_proj2_std2_name_en">
-                            </div>
-                            <div class="form-group">
-                                <label for="sub_proj2_std2_name_contact">Email / Telephone Number of Student 2</label>
-                                <input type="text" class="form-control" id="sub_proj2_std2_name_contact" name="sub_proj2_std2_name_contact">
-                            </div>
-                            <div class="form-group">
-                                <label for="sub_proj2_adv1_name_th">Name of Advisor 1 (in Thai)</label>
-                                <input type="text" class="form-control" id="sub_proj2_adv1_name_th" name="sub_proj2_adv1_name_th">
-                            </div>
-                            <div class="form-group">
-                                <label for="sub_proj2_adv1_name_en">Name of Advisor 1 (in English)</label>
-                                <input type="text" class="form-control" id="sub_proj2_adv1_name_en" name="sub_proj2_adv1_name_en">
-                            </div>
-                            <div class="form-group">
-                                <label for="sub_proj2_adv1_name_contact">Email / Telephone Number of Advisor 1</label>
-                                <input type="text" class="form-control" id="sub_proj2_adv1_name_contact" name="sub_proj2_adv1_name_contact">
-                            </div>
-                            <div class="form-group">
-                                <label for="sub_proj2_adv2_name_th">Name of Advisor 2 (in Thai)</label>
-                                <input type="text" class="form-control" id="sub_proj2_adv2_name_th" name="sub_proj2_adv2_name_th">
-                            </div>
-                            <div class="form-group">
-                                <label for="sub_proj2_adv2_name_en">Name of Advisor 2 (in English)</label>
-                                <input type="text" class="form-control" id="sub_proj2_adv2_name_en" name="sub_proj2_adv2_name_en">
-                            </div>
-                            <div class="form-group">
-                                <label for="sub_proj2_adv2_name_contact">Email / Telephone Number of Advisor 2</label>
-                                <input type="text" class="form-control" id="sub_proj2_adv2_name_contact" name="sub_proj2_adv2_name_contact">
-                            </div>
-
+                            
                             <!-- Upload File -->
                             <div class="form-group">
                                 <label for="sub_file">Upload Abstract File<span class="text-danger">*</span></label>
