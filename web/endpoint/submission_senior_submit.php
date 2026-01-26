@@ -22,8 +22,7 @@
         empty($_POST['sub_department']) ||
         empty($_POST['sub_proj1_name']) ||
         empty($_POST['sub_proj1_abstract']) ||
-        empty($_POST['sub_proj2_name']) ||
-        empty($_POST['sub_proj2_abstract']) ||
+        empty($_POST['sub_category']) ||
         empty($_FILES['sub_file'])
     ) {
         $_SESSION['SweetAlert'] = new SweetAlert("Error", "Please fill all required fields", SweetAlert::ERROR);
