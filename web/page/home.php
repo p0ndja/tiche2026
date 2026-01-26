@@ -99,7 +99,7 @@
                                     />
                                 </td>
                                 <td class="pl-3">
-                                    <h6><strong>Topic: <i class="text-muted">*to be announced*</i></strong></h6>
+                                    <h6><strong>Topic: Electrolyte Engineering: From Solution Thermodynamics to High-Voltage Energy Storage Applications</strong></h6>
                                     <h6>
                                     <strong
                                         >Dr. Pawin Iamprasertkun<br />
