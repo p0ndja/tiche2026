@@ -65,7 +65,7 @@
                     <div>
                         <?php print_r($post->getArticle()); ?>
                     </div>
-                    <?php echo createHeader("Plenery Lecture"); ?>
+                    <?php echo createHeader("Plenary Lecture"); ?>
                     <h5 class="text-center text-muted py-5">To be announced</h5>
                     <!-- <p class='font-italic text-muted'>
                         <table cellspacing="0" class="MsoTableGrid" style="border:0px; text-align:left; vertical-align:middle; white-space:normal">
