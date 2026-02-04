@@ -7,7 +7,7 @@ CKEDITOR.editorConfig = function (config) {
   // Define changes to default configuration here. For example:
   config.language = "th";
   config.extraPlugins = "uploadimage";
-  config.uploadUrl = "../../../../../../file/ckeditor-uploader.php";
+  // config.uploadUrl = "/file/ckeditor-uploader.php";
   config.height = "40em";
   config.font_defaultLabel =
     "Inter/Inter,-apple-system, BlinkMacSystemFont, sans-serif;";
@@ -17,6 +17,12 @@ CKEDITOR.editorConfig = function (config) {
     "Sarabun;" +
     "Bai Jamjuree;";
   config.allowedContent = true;
+  config.contentsCss = [
+    "/static/library/fontawesome-free-6.2.1-web/css/all.min.css",
+    "/static/library/bootstrap-4.6.1-dist/css/bootstrap.min.css",
+    "/static/library/mdbootstrap-4.19.1/css/mdb.min.css",
+    "/static/asset/style.css",
+  ]
 };
 
 CKEDITOR.on("dialogDefinition", function (ev) {
