@@ -2,12 +2,18 @@
 require_once '../static/function/connect.php';
 require_once '../api/payment/encrypt.php';
 require_once '../static/function/mail/sender.php';
+$isClose = getDatatable("closeRegistration")["value"];
+if ($isClose) {
+    $_SESSION['SweetAlert'] = new SweetAlert(PresetMessage::ERROR, 'Registration is now closed', SweetAlert::ERROR);
+    header("Location: /");
+    die();
+}
 if (!isset($_SESSION['registration_id']) && !isset($_GET['registration_id'])) {
     header("Location: /registration/");
     die();
 }
 $id = (isset($_GET['registration_id'])) ? xss_clean($_GET['registration_id']) : $_SESSION['registration_id'];
-
+$format_id = sprintf("%06d", $id);
 $stmt = $conn->prepare("SELECT * FROM registration WHERE reg_id = ?");
 $stmt->bind_param("s", $id);
 $stmt->execute();
@@ -24,7 +30,7 @@ $paid = false;
 $earlybird = ($price == 3000 || $price == 5000 || $price == 1) ? true : false;
 if ($row['reg_payment_paid'] == 1)
     $paid = true;
-else if (checkStatus(sprintf("%06d", $id)) == true) {
+else if (checkStatus($format_id) == true) {
     $stmt = $conn->prepare("UPDATE registration SET reg_payment_paid = 1, reg_payment_timestamp = CURRENT_TIMESTAMP() WHERE reg_id = ?");
     $stmt->bind_param("s", $id);
     $stmt->execute();
@@ -32,7 +38,7 @@ else if (checkStatus(sprintf("%06d", $id)) == true) {
         $row['reg_email'],
         "TIChE 2026 Registration Confirmation - $name",
         "https://tiche2026.ubu.ac.th/static/function/mail/template/registration_success.html",
-        array("name"=>$name, "date"=>date("Y-m-d H:i:s", time()), "id"=>sprintf("%06d", $id)));
+        array("name"=>$name, "date"=>date("Y-m-d H:i:s", time()), "id"=>$format_id));
     $paid = true;
     header("Location: /registration/result");
     die();

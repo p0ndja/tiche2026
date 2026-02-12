@@ -6,8 +6,15 @@ if (!isset($_SESSION['registration_id']) && !isset($_GET['registration_id'])) {
     header("Location: /registration/");
     die();
 }
-$id = (isset($_GET['registration_id'])) ? xss_clean($_GET['registration_id']) : $_SESSION['registration_id'];
+$isClose = getDatatable("closeRegistration")["value"];
+if ($isClose) {
+    $_SESSION['SweetAlert'] = new SweetAlert(PresetMessage::ERROR, 'Registration is now closed', SweetAlert::ERROR);
+    header("Location: /");
+    die();
+}
 
+$id = (isset($_GET['registration_id'])) ? xss_clean($_GET['registration_id']) : $_SESSION['registration_id'];
+$format_id = sprintf("%06d", $id);
 $stmt = $conn->prepare("SELECT * FROM registration WHERE reg_id = ?");
 $stmt->bind_param("s", $id);
 $stmt->execute();
@@ -24,7 +31,7 @@ $paid = false;
 $earlybird = ($price == 3000 || $price == 5000 || $price == 1) ? true : false;
 if ($row['reg_payment_paid'] == 1)
     $paid = true;
-else if (checkStatus(sprintf("%06d", $id)) == true) {
+else if (checkStatus($format_id) == true) {
     $stmt = $conn->prepare("UPDATE registration SET reg_payment_paid = 1, reg_payment_timestamp = CURRENT_TIMESTAMP() WHERE reg_id = ?");
     $stmt->bind_param("s", $id);
     $stmt->execute();
@@ -32,7 +39,7 @@ else if (checkStatus(sprintf("%06d", $id)) == true) {
         $row['reg_email'],
         "TIChE 2026 Registration Confirmation - $name",
         "https://tiche2026.ubu.ac.th/static/function/mail/template/registration_success.html",
-        array("name"=>$name, "date"=>date("Y-m-d H:i:s", time()), "id"=>sprintf("%06d", $id)));
+        array("name"=>$name, "date"=>date("Y-m-d H:i:s", time()), "id"=>$format_id));
     $paid = true;
 }
 
@@ -54,7 +61,7 @@ $stmt->close();
                 <?php require_once '../static/function/sidetab.php'; ?>
             </div>
             <div class="col-12 col-lg-9">
-                <h2 class="font-weight-bold">REGISTRATION FOR TIChE2026</h2>
+                <h2 class="font-weight-bold">CONFERENCE REGISTRATION FOR TIChE2026</h2>
                 <hr>
                 <div class="text-center">
                     <div>
@@ -72,14 +79,18 @@ $stmt->close();
                     </div>
                 <h5 class="font-weight-bold">Thank you for your registration!</h5>
                 <p>Your registration has been successfully recorded.
-                <p>Registration ID: <strong><?php echo sprintf("%06d", $id); ?></strong></p>
+                <p>Registration ID: <strong><?php echo $format_id; ?></strong></p>
                 <p>Name: <strong><?php echo $name; ?></strong></p>
                 <p>Amount: <strong>THB <?php echo number_format($price, 2); ?></strong><br>
                 <?php if ($earlybird) { ?><small>(Secure your early registration rate by completing the payment before April 1, 2026 (GMT+7, Server time)</small><?php } ?>
                 </p>
                 <?php if (!$paid) { ?>
                 <h5 class="font-weight-bold">Please proceed to payment to complete your registration.</h5>
+                <?php if ($isClose) { ?>
                 <a href="#/registration/proceeder" class="btn btn-danger btn-block display-1 font-weight-bold disabled" disabled>Registration is now closed</a>
+                <?php } else { ?>
+                <a href="/registration/proceeder" class="btn btn-primary btn-block display-1 font-weight-bold">Proceed to Payment</a>
+                <?php } ?>
                 <small>
                     If you have already paid, you may need to refresh this page manually.<br>
                     If it's still not updated, please <a href="/post/7">contact us</a> with your registration ID.
