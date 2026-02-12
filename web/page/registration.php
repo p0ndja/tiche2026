@@ -132,7 +132,7 @@
                                 <textarea class="form-control" id="reg_note" name="reg_note" rows="5" <?php if ($isClose) echo "disabled"; ?>></textarea>
                             </div>
                             <div class="cf-turnstile mb-4" data-theme="light" data-sitekey="0x4AAAAAABh0HRZB4iCc89in"></div>
-                            <button class="btn btn-<?php echo ($isClose) ? "danger" : "primary"; ?> btn-block" <?php if ($isClose) echo "disabled"; ?> id="submitBtn"><?php echo ($isClose) ? "Registration Closed" : "Submit"; ?></button>
+                            <button class="btn btn-<?php echo ($isClose) ? "danger" : "primary"; ?> btn-block" disabled <?php if ($isClose) echo "disabled"; ?> id="submitBtn"><?php echo ($isClose) ? "Registration Closed" : "Submit"; ?></button>
                             <script>
                                 
                                 // check if all required fields are filled, enable submit button
