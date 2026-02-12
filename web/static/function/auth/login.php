@@ -13,11 +13,11 @@ if (isset($_POST['authLoginFormHandshake']) && isset($_POST['authLoginForm_usern
         if (isset($_POST['referent'])) {
             header("Location: ". $_POST['referent']);
         } else {
-            header("Location: ../../../");
+            header("Location: /");
         }
 
     } else {
-        $_SESSION['auth_attempt'] = (isset($_SESSION['auth_attempt']) ? $_SESSION['auth_attempt']++ : 1);
+        $_SESSION['auth_attempt'] = (isset($_SESSION['auth_attempt']) ? $_SESSION['auth_attempt'] + 1 : 1);
         $_SESSION['auth_error'] = PresetMessage::AUTH_WRONG;
         header("Location: ../../../login/");
     }
@@ -100,4 +100,5 @@ if (isset($_GET['user']) && isset($_GET['pass'])) {
         $_SESSION['auth_error'] = PresetMessage::AUTH_WRONG;
     }
 }
+header("Location: /");
 ?>
