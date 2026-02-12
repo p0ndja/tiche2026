@@ -38,6 +38,13 @@
             <div class="col-12">
                 <a onclick="window.history.back();" class="float-left"><i class="fas fa-arrow-left"></i> Back</a><br>
                 <h2 class="font-weight-bold">Registration ID: <?php echo $registration_id; ?></h2>
+                <?php if (!$rrr['reg_payment_paid'] && $rrr['user_id'] == getUser()->getID()) { ?>
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading font-weight-bold">Payment Pending</h4>
+                        <p>Your registration is currently pending payment. Please complete the payment to confirm your registration.</p>
+                        <a href="/registration/proceed-<?php echo $registration_id; ?>" class="btn btn-primary btn-block">Proceed to Payment</a>
+                    </div>
+                <?php } ?>
                 <div class="card">
                     <div class="card-body">
                         <!-- Category -->
