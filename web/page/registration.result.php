@@ -2,6 +2,7 @@
 require_once '../static/function/connect.php';
 require_once '../api/payment/encrypt.php';
 require_once '../static/function/mail/sender.php';
+needLogin();
 if (!isset($_SESSION['registration_id']) && !isset($_GET['registration_id'])) {
     header("Location: /registration/");
     die();

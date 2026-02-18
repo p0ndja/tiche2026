@@ -41,7 +41,6 @@
                             <div class="cf-turnstile mb-3 mt-4" data-theme="light" data-sitekey="0x4AAAAAABh0HRZB4iCc89in"></div>
                             <button class="btn btn-block btn-c-md font-weight-bold mt-3" type="submit" name="authRegForm_submit">Register</button>
                             <div class="text-center mt-2 text-muted"><a href="../forgetpassword/" class="text-danger">Forget Password</a>&nbsp;•&nbsp;<a href="../login/" class="text-md">Login</a></div>
-                            <input type="hidden" name="referent" value="<?php echo (isset($_SERVER['HTTP_REFERER']) ? xss_clean($_SERVER['HTTP_REFERER']) : null); ?>">
                         </div>
                     </form>
                 </div>

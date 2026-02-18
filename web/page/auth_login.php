@@ -33,7 +33,6 @@
                             <div class="text-center mt-2 text-muted">
                                 <a href="../forgetpassword/" class="text-danger">Forget Password</a><?php if (getConfig('allowRegister')) { ?>&nbsp;•&nbsp;<a href="../register/" class="text-md">Register</a><?php } ?>
                             </div>
-                            <input type="hidden" name="referent" value="<?php echo (isset($_SERVER['HTTP_REFERER']) ? xss_clean($_SERVER['HTTP_REFERER']) : null); ?>">
                         </div>
                     </div>
                 </form>

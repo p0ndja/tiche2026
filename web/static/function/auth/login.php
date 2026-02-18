@@ -10,8 +10,10 @@ if (isset($_POST['authLoginFormHandshake']) && isset($_POST['authLoginForm_usern
         $_SESSION['currentActiveUser'] = $credential;
         $_SESSION['SweetAlert'] = new SweetAlert("Login Successful", "Welcome! " . $credential->getName(), SweetAlert::SUCCESS);
         
-        if (isset($_POST['referent'])) {
-            header("Location: ". $_POST['referent']);
+        if (isset($_SESSION['auth_referent'])) {
+            header("Location: ". $_SESSION['auth_referent']);
+            unset($_SESSION['auth_referent']);
+            die();
         } else {
             header("Location: /");
         }

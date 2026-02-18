@@ -779,6 +779,7 @@
 ?><?php function needLogin() {
     if (!isLogin()) {
         $_SESSION['auth_error'] = "Please login before continuing the process";
+        $_SESSION['auth_referent'] = $_SERVER['REQUEST_URI'];
         header("Location: ../login/");
         die();
     }} ?><?php function needPermission($perm) {
