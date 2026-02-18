@@ -27,6 +27,12 @@ if ($result->num_rows == 0) {
 $row = $result->fetch_assoc();
 $price = $row['reg_payment_amount'];
 $name = $row['reg_fullName'];
+$user_id = $row['user_id'];
+if ($user_id != $_SESSION['currentActiveUser']->getId()) {
+    header("Location: /");
+    $_SESSION['SweetAlert'] = new SweetAlert(PresetMessage::ERROR, 'You are not allowed to view this registration due to user mismatch.', SweetAlert::ERROR);
+    die();
+}
 
 $paid = false;
 $earlybird = ($price == 3000 || $price == 5000 || $price == 1) ? true : false;
