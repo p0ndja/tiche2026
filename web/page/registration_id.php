@@ -80,6 +80,24 @@
                         <div class="form-group">
                             <label for="reg_note">Receipt Information (Billing Address)</label>
                             <textarea class="form-control" id="reg_note" name="reg_note" readonly rows="5"><?php echo $rrr['reg_note']; ?></textarea>
+                            <?php 
+                            $dateBetween = (strtotime($rrr['reg_timestamp']) + 60 * 60 * 24 * 14) - time();
+                            // Hard deadline = 9 June 2026, 00:00:00 GMT+7
+                            $hardDeadline = strtotime('2026-06-09 00:00:00') - time();
+                            if ($hardDeadline < 0) {
+                                $dateBetween = -1;
+                            }
+                            ?>
+                            <?php if (($rrr['user_id'] == getUser()->getID() && ($dateBetween > 0) && !$rrr['reg_note_confirm']) || isAdmin()) { ?>
+                            <div id="billingEditBtnContainer">
+                                <small class="form-text text-muted <?php if (isAdmin()) echo 'd-none';?>">You can edit this information <u class="text-danger">ONLY ONCE</u> within 14 days of registration and not after the conference has started.</small>
+                                <a href="#edit" class="btn btn-secondary mt-2" onclick="editBillingInfo(<?php echo $rrr['reg_id']; ?>)">Edit Billing Information</a>
+                            </div>
+                            <div id="billingEditInfoContainer" style="display:none">
+                                <a href="#edit" class="btn btn-success mt-2" onclick="submitEditedBillingInfo(<?php echo $rrr['reg_id']; ?>)">Update</a>
+                                <a href="#edit" class="btn btn-danger mt-2" onclick="cancelEditBillingInfo()">Discard</a>
+                            </div>
+                            <?php } ?>
                         </div>
                         <h5 class="font-weight-bold mt-3 mb-0">Payment Information</h5>
                         <hr>
@@ -96,6 +114,52 @@
             </div>
         </div>
     </div>
+    <script>
+        let originalBillingInfo = $("#reg_note").val();
+        function editBillingInfo(registrationId) {
+            swal({
+                title: 'Edit Billing Information',
+                text: '<?php if (isAdmin()) { echo "You are editing this registration as an administrator. Please make sure to input the correct billing information."; } else { echo "You can only edit your billing information once. Are you sure you want to edit it?"; } ?>',
+                icon: 'warning',
+                buttons: ['Cancel', 'Edit'],
+                dangerMode: true,
+            }).then((result) => {
+                if (result) {
+                    $("#reg_note").removeAttr("readonly").focus();
+                    $("#billingEditBtnContainer").hide();
+                    $("#billingEditInfoContainer").show();
+                }
+            });
+        }
+        function cancelEditBillingInfo() {
+            $("#reg_note").val(originalBillingInfo);
+            $("#reg_note").attr("readonly", "readonly");
+            $("#billingEditBtnContainer").show();
+            $("#billingEditInfoContainer").hide();
+        }
+
+        function submitEditedBillingInfo(registrationId) {
+            swal({
+                title: 'Update Billing Information',
+                text: 'Are you sure you want to update your billing information? This action cannot be undone.',
+                icon: 'warning',
+                buttons: ['Cancel', 'Update'],
+                dangerMode: true,
+            }).then((result) => {
+                if (result) {
+                    $.post('/endpoint/registration_billingInfoEdit.php', { registration_id: registrationId, new_billing_info: $("#reg_note").val() }, function(response) {
+                        if (response.success) {
+                            swal('Success', 'Your billing information has been updated.', 'success').then(() => {
+                                location.reload();
+                            });
+                        } else {
+                            swal('Error', response.message, 'error');
+                        }
+                    }, 'json');
+                }
+            });
+        }
+    </script>
     <?php require_once '../static/function/popup.php'; ?>
     <?php require_once '../static/function/navigation/footer.php'; ?>
     <?php require_once '../static/function/script/footer.php'; ?>
