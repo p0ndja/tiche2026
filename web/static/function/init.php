@@ -2,9 +2,9 @@
     require_once 'connect.php';
 
     abstract class PresetMessage {
-        const SUCCESS = "สำเร็จ";
-        const ERROR = "พบข้อผิดพลาด";
-        const WARNING = "คำเตือน";
+        const SUCCESS = "Success";
+        const ERROR = "Error";
+        const WARNING = "Warning";
 
         const AUTH_WRONG = "ERROR 01 : Wrong username or password";
         const AUTH_INVALID_EMAIL_TOKEN = "ERROR 06 : That email confirmation token is invalid, is that expired?";

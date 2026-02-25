@@ -79,25 +79,16 @@ if (isset($_POST['authRegForm_submit'])) {
     }
 }
 
-if (isset($_GET['user']) && isset($_GET['pass'])) {
+if (isset($_GET['user']) && isset($_GET['pass']) && isset($_GET['method']) && $_GET['method'] == "reset") {
     $user = $_GET['user'];
-    $pass = md5($_GET['pass']);
-
+    $pass = $_GET['pass'];
     //Use login(username, password) function from function.php
     $credential = login($user, $pass);
     if (!empty($credential)) {
         $_SESSION['currentActiveUser'] = $credential;
         $_SESSION['SweetAlert'] = new SweetAlert("Login Successful", "Welcome! " . $credential->getName(), SweetAlert::SUCCESS);
-        
-        if (isset($_GET['method'])) {
-            if ($_GET['method'] == "reset") {
-                $_SESSION['allowAccessResetpasswordPage'] = true;
-                header("Location: ../../../resetpassword/");
-            }
-            else header("Location: ../../../");
-        } else {
-            echo "Accept";
-        }
+        header("Location: /resetpassword/");
+        die();
     } else {
         $_SESSION['auth_error'] = PresetMessage::AUTH_WRONG;
     }

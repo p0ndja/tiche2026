@@ -11,20 +11,21 @@
             $stmt->execute();
             $result = $stmt->get_result();
             if ($result->num_rows > 1) {
-                $_SESSION['auth_error'] = "ไม่สามารถรีเซ็ตรหัสผ่านได้: พบการใช้อีเมลซ้ำมากกว่า 1 ผู้ใช้งาน โปรดติดต่อผู้ดูแลระบบ";
+                $_SESSION['auth_error'] = "Unexpected error: Multiple users found with the same email. Please contact support.";
             } else if ($result->num_rows == 1) {
                 while ($row = $result->fetch_assoc()) {
                     $tempAuthKey = generateAuthKey($row['id']);
                     $var = array("key"=>$tempAuthKey, "email"=>$email, "name"=>$row['name']);
-                    $sendMail = sendEmail($email, "สวัสดี " . $row['name'] . "! คุณได้ทำการส่งคำร้องขอรีเซ็ตรหัสผ่านเพื่อเข้าใช้งานเว็บไซต์ tiche2026.ubu.ac.th", "https://tiche2026.ubu.ac.th/static/function/mail/template/resetpassword.html", $var);
+                    $sendMail = sendEmail($email,  $row['name'] . ", Are you trying to reset password at tiche2026.ubu.ac.th?", "https://tiche2026.ubu.ac.th/static/function/mail/template/resetpassword.html", $var);
+                    // $sendMail = sendEmail($email, "สวัสดี " . $row['name'] . "! คุณได้ทำการส่งคำร้องขอรีเซ็ตรหัสผ่านเพื่อเข้าใช้งานเว็บไซต์ tiche2026.ubu.ac.th", "https://tiche2026.ubu.ac.th/static/function/mail/template/resetpassword.html", $var);
                     if ($sendMail) {
-                        $_SESSION['SweetAlert'] = new SweetAlert("รีเซ็ตรหัสผ่านสำเร็จ", "กรุณาตรวจสอบที่อีเมลของท่านเพื่อดำเนินการต่อ", SweetAlert::SUCCESS);
+                        $_SESSION['SweetAlert'] = new SweetAlert("Success", "Please follow the instructions in your email to reset your password.", SweetAlert::SUCCESS);
                     } else {
-                        $_SESSION['auth_error'] = "ไม่สามารถรีเซ็ตรหัสผ่านได้: ข้อผิดพลาดภายใน";
+                        $_SESSION['auth_error'] = "Unexpected Error: Internal server error. Please try again later.";
                     }
                 }
             } else {
-                $_SESSION['auth_error'] = "ไม่พบอีเมลนี้ในฐานข้อมูล";
+                $_SESSION['auth_error'] = "No user found with the provided email address.";
             }
             $stmt->free_result();
             $stmt->close();

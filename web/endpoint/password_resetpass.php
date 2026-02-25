@@ -8,7 +8,7 @@
         if ($stmt = $conn->prepare("UPDATE `user` SET `password` = ? WHERE id = ?")) {
             $stmt->bind_param('si', $md5_pass, $id);
             if ($stmt->execute()) {
-                $_SESSION['SweetAlert'] = new SweetAlert(PresetMessage::SUCCESS, "เปลี่ยนรหัสผ่านสำเร็จ");
+                $_SESSION['SweetAlert'] = new SweetAlert(PresetMessage::SUCCESS, "Your password has been reset successfully.", SweetAlert::SUCCESS);
                 unset($_SESSION['allowAccessResetpasswordPage']);
                 header("Location: ../");
                 die();
