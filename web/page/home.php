@@ -153,7 +153,7 @@
                                     />
                                 </td>
                                 <td class="pl-3 pt-2">
-                                    <h6><strong>Topic: <i class="text-muted">*to be announced*</i></strong></h6>
+                                    <h6><strong>Topic: Functional Biopolymers Integrated with Bioactive Compounds</strong></h6>
                                     <h6>
                                     <strong
                                         >Dr. Pornnapa Kasemsiri <br />
