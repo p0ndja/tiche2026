@@ -28,7 +28,7 @@
     $current_url = "$host_url$_SERVER[REQUEST_URI]";
 
     $og = array(
-        'title' => "TIChE2026 - Organized by Department of Chemical Engineering, Faculty of Engineering, Ubon Ratchathani University",
+        'title' => "TIChE2026 - Organized by Department of Chemical and Environmental Engineering, Faculty of Engineering, Ubon Ratchathani University",
         'logo'=> "$host_url/static/asset/header_16x9.png",
         'height'=> 720,
         'width'=> 1280
