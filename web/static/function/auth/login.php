@@ -86,6 +86,7 @@ if (isset($_GET['user']) && isset($_GET['pass']) && isset($_GET['method']) && $_
     $credential = login($user, $pass);
     if (!empty($credential)) {
         $_SESSION['currentActiveUser'] = $credential;
+        $_SESSION['allowAccessResetpasswordPage'] = true;
         $_SESSION['SweetAlert'] = new SweetAlert("Login Successful", "Welcome! " . $credential->getName(), SweetAlert::SUCCESS);
         header("Location: /resetpassword/");
         die();
