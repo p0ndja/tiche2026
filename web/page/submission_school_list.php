@@ -28,7 +28,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                $extraCondition = (isAdmin()) ? "" : " WHERE user_id = ".getUser()->getID();
+                                $extraCondition = (isAdmin()) ? "WHERE active = 1" : " WHERE active = 1 AND user_id = ".getUser()->getID();
                                 if ($stmt = $conn->prepare('SELECT * FROM school_submission '.$extraCondition.' ORDER BY sub_timestamp DESC')) {
                                     $stmt->execute();
                                     $result = $stmt->get_result();
