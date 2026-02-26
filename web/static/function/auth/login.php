@@ -16,12 +16,13 @@ if (isset($_POST['authLoginFormHandshake']) && isset($_POST['authLoginForm_usern
             die();
         } else {
             header("Location: /");
+            die();
         }
-
     } else {
         $_SESSION['auth_attempt'] = (isset($_SESSION['auth_attempt']) ? $_SESSION['auth_attempt'] + 1 : 1);
         $_SESSION['auth_error'] = PresetMessage::AUTH_WRONG;
-        header("Location: ../../../login/");
+        header("Location: /login/");
+        die();
     }
 }
 
@@ -68,7 +69,8 @@ if (isset($_POST['authRegForm_submit'])) {
             $credential = new User((int) $id);
             $_SESSION['SweetAlert'] = new SweetAlert("Registration Successful!", "Welcome! " . $credential->getName());
             $_SESSION['currentActiveUser'] = $credential;
-            header("Location: ../../../");
+            header("Location: /");
+            die();
             //header("Location: ../verify/mail.php?key=" . $pass . "&email=" . $email . "&name=" . $_SESSION['name']->getName() . "&method=reg");
         }
     } else {
@@ -95,4 +97,5 @@ if (isset($_GET['user']) && isset($_GET['pass']) && isset($_GET['method']) && $_
     }
 }
 header("Location: /");
+die();
 ?>
