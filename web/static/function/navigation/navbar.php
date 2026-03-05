@@ -76,9 +76,9 @@
                 <li class="nav-item navbar-border-right">
                     <a class="nav-link px-2 px-xl-3 py-2" href="/submission/abstract">Abstract Submission <!--<sup><span class="badge badge-danger">CLOSED</span></sup>--></a>
                 </li>
-                <!-- <li class="nav-item navbar-border-right">
+                <li class="nav-item navbar-border-right">
                     <a class="nav-link px-2 px-xl-3 py-2" href="/submission/full-paper">Full Paper Submission</a>
-                </li> -->
+                </li>
                 <li class="nav-item navbar-border-right">
                     <a class="nav-link px-2 px-xl-3 py-2" href="/registration/">Conference Registration <!--<sup><span class="badge badge-danger">CLOSED</span></sup>--></a>
                 </li>
@@ -88,23 +88,6 @@
                 <li class="nav-item">
                     <a class="nav-link px-2 px-xl-3 py-2" href="/download/">DOWNLOAD</a>
                 </li>
-                <!-- <li class="nav-item navbar-border-right dropdown">
-                    <a class="nav-link px-2 px-xl-3 py-2 dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">บุคลากร</a>
-                    <ul aria-labelledby="dropdownMenu1" class="dropdown-menu dropdown-md">
-                        <li><a class="dropdown-item" href="../people/doctor">คณาจารย์ปัจจุบัน</a></li>
-                        <li><a class="dropdown-item" href="../people/colleague">แพทย์ใช้ทุน/แพทย์ประจำบ้าน</a></li>
-                        <li><a class="dropdown-item" href="../people/colleague2">แพทย์ประจำบ้านต่อยอด</a></li>
-                        <li><a class="dropdown-item" href="../people/staff">บุคลากรสายสนับสนุน</a></li>
-                        <li><a class="dropdown-item" href="/post/4">อดีตคณาจารย์</a></li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle mb-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ทำเนียบศิษย์เก่า</a>
-                            <ul class="dropdown-menu dropdown-md border-0 shadow">
-                                <a class="dropdown-item" href="/post/5">แพทย์ใช้ทุน/แพทย์ประจำบ้าน</a>
-                                <a class="dropdown-item" href="/post/6">แพทย์ประจำบ้านต่อยอด</a>
-                            </ul>
-                        </li>
-                    </ul>
-                </li> -->
             </ul>
         </div>
     </nav>
@@ -122,23 +105,6 @@
                 <li class="nav-item navbar-border-right">
                     <a class="nav-link px-2 px-xl-3 py-2" href="/submission/school">TIChE HIGH SCHOOL PROJECT CONTEST 2026</a>
                 </li>
-                <!-- <li class="nav-item navbar-border-right dropdown">
-                    <a class="nav-link px-2 px-xl-3 py-2 dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">บุคลากร</a>
-                    <ul aria-labelledby="dropdownMenu1" class="dropdown-menu dropdown-md">
-                        <li><a class="dropdown-item" href="../people/doctor">คณาจารย์ปัจจุบัน</a></li>
-                        <li><a class="dropdown-item" href="../people/colleague">แพทย์ใช้ทุน/แพทย์ประจำบ้าน</a></li>
-                        <li><a class="dropdown-item" href="../people/colleague2">แพทย์ประจำบ้านต่อยอด</a></li>
-                        <li><a class="dropdown-item" href="../people/staff">บุคลากรสายสนับสนุน</a></li>
-                        <li><a class="dropdown-item" href="/post/4">อดีตคณาจารย์</a></li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle mb-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ทำเนียบศิษย์เก่า</a>
-                            <ul class="dropdown-menu dropdown-md border-0 shadow">
-                                <a class="dropdown-item" href="/post/5">แพทย์ใช้ทุน/แพทย์ประจำบ้าน</a>
-                                <a class="dropdown-item" href="/post/6">แพทย์ประจำบ้านต่อยอด</a>
-                            </ul>
-                        </li>
-                    </ul>
-                </li> -->
             </ul>
         </div>
     </nav>
