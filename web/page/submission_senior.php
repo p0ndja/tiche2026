@@ -7,7 +7,6 @@
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 </head>
 <?php require_once '../static/function/navigation/navbar.php'; ?>
-<?php needLogin(); ?>
 <body>
     <div class="container mb-3">
         <div class="row">
@@ -17,7 +16,7 @@
             <div class="col-12 col-lg-9">
                 <h3 class="font-weight-bold">TIChE SENIOR PROJECT CONTEST 2026</h3>
                 <?php
-                    if (!isAdmin()) {
+                    if (isLogin() && !isAdmin()) {
                         $userId = (int) getUser()->getID();
                         if ($stmt = $conn->prepare("SELECT COUNT(*) FROM senior_submission WHERE user_id = $userId")) {
                             $stmt->execute();
@@ -51,7 +50,7 @@
                 <p>
                 <b>Submission Deadlines and Competition Date:</b>
                 <ul>
-                    <li>Department must submit two projects, along with a list of up to four students and the name of a faculty member serving as a committee, by <b>February 28, 2026.</b></li>
+                    <li>Department must submit two projects, along with a list of up to four students and the name of a faculty member serving as a committee, by <b><span style="text-decoration:line-through;text-decoration-color:red;">February 28, 2026</span> April 3, 2026 (extended).</b></li>
                     <li>The competition will be held on <b>June 9, 2026</b>, with sessions scheduled for both the morning and afternoon.</li>
                 </ul>
                 </p>
@@ -66,6 +65,17 @@
 
                 <h3 class="font-weight-bold mt-5">ONLINE REGISTRATION</h3>
                 <hr>
+                <?php $isClose = getDatatable("closeSubmitProjectContest")["value"]; ?>
+                <?php
+                if ($isClose) { ?>
+                    <div class="alert alert-danger">Submission is now closed. Thank you for your interest.</div>
+                <?php } else if (!isLogin()) { ?>
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading font-weight-bold">Please Log In</h4>
+                        <p>You need to log in to submit your project. Please log in or create an account if you don't have one.</p>
+                        <a href="/login/" class="btn btn-primary">Log In</a>
+                    </div>
+                <?php } else { ?>
                 <div class="card">
                     <div class="card-body">
                         <form action="../endpoint/submission_senior_submit.php" method="post" enctype="multipart/form-data">
@@ -195,6 +205,7 @@
                         </form>
                     </div>
                 </div>
+                <?php } ?>
             </div>
         </div>
     </div>

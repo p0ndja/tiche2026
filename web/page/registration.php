@@ -7,7 +7,6 @@
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 </head>
 <?php require_once '../static/function/navigation/navbar.php'; ?>
-<?php needLogin(); ?>
 <body>
     <div class="container mb-3">
         <div class="row">
@@ -18,7 +17,7 @@
             <div class="col-12 col-lg-9">
                 <h2 class="font-weight-bold">CONFERENCE REGISTRATION FOR TIChE2026</h2>
                 <?php
-                    if (!isAdmin()) {
+                    if (isLogin() && !isAdmin()) {
                         $userId = (int) getUser()->getID();
                         if ($stmt = $conn->prepare("SELECT COUNT(*) FROM registration WHERE user_id = $userId")) {
                             $stmt->execute();
@@ -33,11 +32,6 @@
                 ?>
                 <hr>
                 <div>
-                <?php
-                if ($isClose) { ?>
-                    <div class="alert alert-danger">
-                    TIChE has already ended. The Registration is now closed.</div>
-                <?php } ?>
                 <table class="table w-100 table-light table-bordered">
                     <thead>
                         <tr>
@@ -79,6 +73,17 @@
                 </div>
                 <h4 class="font-weight-bold mt-5">ONLINE REGISTRATION</h4>
                 <hr>
+                <?php
+                if ($isClose) { ?>
+                    <div class="alert alert-danger">
+                    TIChE has already ended. The Registration is now closed.</div>
+                <?php } else if (!isLogin()) { ?>
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading font-weight-bold">Please Log In</h4>
+                        <p>You need to log in to register for the conference. Please log in or create an account if you don't have one.</p>
+                        <a href="/login/" class="btn btn-primary">Log In</a>
+                    </div>
+                <?php } else { ?>
                 <div class="card">
                     <div class="card-body">
                         <form action="<?php echo ($isClose) ? "#" : "../endpoint/registration_submit.php"; ?>" method="post" enctype="multipart/form-data">
@@ -95,6 +100,7 @@
                             <div class="form-group" id="reg_code_div">
                                 <label for="reg_code">Abstract Code<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="reg_code" name="reg_code" required <?php if ($isClose) echo "disabled"; ?>>
+                                <small class="form-text text-muted">Only required for presenter. Must be the code given by the conference organizers. Case and format sensitive.</small>
                             </div>
                             <script>
                                 // show/hide registration code input
@@ -163,10 +169,30 @@
                                         $('#reg_email').addClass('is-invalid');
                                     }
                                 });
+
+                                // validate abstract code, only when presenter is selected
+                                // in format of TIChE-XX-NN, where XX is two-letter (CR, SG, AM, BE, PE, EF, IA) and NN is two-digit number
+                                $('#reg_code').on('input', function() {
+                                    if ($('#reg_category').val() == 'Presenter') {
+                                        var code = $('#reg_code').val();
+                                        var codePattern = /^TIChE-(CR|SG|AM|BE|PE|EF|IA)-\d{2}$/;
+                                        if (codePattern.test(code)) {
+                                            $('#reg_code').removeClass('is-invalid');
+                                            $('#reg_code').addClass('is-valid');
+                                        } else {
+                                            $('#reg_code').removeClass('is-valid');
+                                            $('#reg_code').addClass('is-invalid');
+                                        }
+                                    } else {
+                                        $('#reg_code').removeClass('is-invalid');
+                                        $('#reg_code').removeClass('is-valid');
+                                    }
+                                });
                             </script>
                         </form>
                     </div>
                 </div>
+                <?php } ?>
             </div>
         </div>
     </div>
