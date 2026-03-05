@@ -102,7 +102,7 @@
                                     if (type == 'TIChE2026 Conference Proceeding') {
                                         $('#note').html(`
                                         <span class='text-primary'>Please note that this full paper will be published in the <b><i>TIChE2026 Conference Proceedings</i></b>.
-                                        If the authors need to preceed with this publication, the submission must follow the provided template and consist of no fewer than 5 pages. </span>
+                                        If the authors need to preceed with this publication, the submission must follow the provided template and consist of no fewer than 8 pages. </span>
                                         <span class='text-danger'>The final submission deadline is <b>April 30, 2026</b>.</span>
                                         `);
                                         $("#sub_file_label").html("Upload File<span class='text-danger'>*</span>&nbsp;<a href='/static/asset/upload/TIChE2026%20Conference%20Proceeding%20Template.docx' target='_blank'>[Download TIChE2026 Conference Proceeding Template]</a>");
