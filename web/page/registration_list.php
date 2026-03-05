@@ -30,7 +30,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                $extraCondition = (isAdmin()) ? "" : " WHERE user_id = ".getUser()->getID();
+                                $extraCondition = (isAdmin()) ? "WHERE active = 1" : " WHERE active = 1 AND user_id = ".getUser()->getID();
                                 if ($stmt = $conn->prepare('SELECT `reg_id` as `id`, `reg_fullName` as `author`, `reg_code` as `abstract`, `reg_timestamp` as `submitDate`, `reg_category` as `type`, `reg_payment_amount` as `payment`, `reg_payment_timestamp` as `paid` FROM registration '.$extraCondition.' ORDER BY reg_timestamp DESC')) {
                                     $stmt->execute();
                                     $result = $stmt->get_result();
