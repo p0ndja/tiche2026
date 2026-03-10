@@ -145,14 +145,14 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="pt-2">
                                     <img
                                     src="/static/asset/upload/people/speaker/2. Dr. Hiroyasu Tabe.jpg"
                                     style="width: 120px"
                                     class="z-depth-1"
                                     />
                                 </td>
-                                <td class="pl-3">
+                                <td class="pl-3 pt-2">
                                     <h6><strong>Topic: Glass Engineering of Metal-Organic Frameworks/Coordination Polymers for Composite Catalytic Systems</strong></h6>
                                     <h6>
                                     <strong
@@ -227,7 +227,7 @@
                             <tr>
                                 <td class="pt-2">
                                     <img
-                                    src="/static/asset/upload/people/speaker/3. Dr. Ravin Narain.jpg"
+                                    src="/static/asset/upload/people/speaker/6. Dr. Supareak Praserthdam.jpg"
                                     style="width: 120px"
                                     class="z-depth-1"
                                     />
