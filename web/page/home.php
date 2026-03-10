@@ -127,12 +127,52 @@
                             <tr>
                                 <td>
                                     <img
-                                    src="/static/asset/upload/people/speaker/1. Dr. Pawin Iamprasertkun.jpg"
+                                    src="/static/asset/upload/people/speaker/5. Dr. Cattaleeya Pattamaprom.jpg"
                                     style="width: 120px"
                                     class="z-depth-1"
                                     />
                                 </td>
                                 <td class="pl-3">
+                                    <h6><strong>Topic: Natural Rubber-Based Sustainable Packaging: 10 Years of Innovation from Functional Performance to End-of-Life Degradation</strong></h6>
+                                    <h6>
+                                    <strong
+                                        >Dr. Cattaleeya Pattamaprom<br />
+                                        Professor</strong
+                                    >
+                                    </h6>
+                                    Department of Chemical Engineering<br>
+                                    Faculty of Engineering, Thammasat University, Thailand
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img
+                                    src="/static/asset/upload/people/speaker/2. Dr. Hiroyasu Tabe.jpg"
+                                    style="width: 120px"
+                                    class="z-depth-1"
+                                    />
+                                </td>
+                                <td class="pl-3">
+                                    <h6><strong>Topic: Glass Engineering of Metal-Organic Frameworks/Coordination Polymers for Composite Catalytic Systems</strong></h6>
+                                    <h6>
+                                    <strong
+                                        >Dr. Hiroyasu Tabe<br />
+                                        Associate Professor</strong
+                                    >
+                                    </h6>
+                                    Institute for Integrated Cell-Material Sciences<br>
+                                    Kyoto University, Japan
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pt-2">
+                                    <img
+                                    src="/static/asset/upload/people/speaker/1. Dr. Pawin Iamprasertkun.jpg"
+                                    style="width: 120px"
+                                    class="z-depth-1"
+                                    />
+                                </td>
+                                <td class="pl-3 p">
                                     <h6><strong>Topic: Electrolyte Engineering: From Solution Thermodynamics to High-Voltage Energy Storage Applications</strong></h6>
                                     <h6>
                                     <strong
@@ -187,6 +227,26 @@
                             <tr>
                                 <td class="pt-2">
                                     <img
+                                    src="/static/asset/upload/people/speaker/3. Dr. Ravin Narain.jpg"
+                                    style="width: 120px"
+                                    class="z-depth-1"
+                                    />
+                                </td>
+                                <td class="pl-3 pt-2">
+                                    <h6><strong>Topic: <i class="text-muted">*to be announced*</i></strong></h6>
+                                    <h6>
+                                    <strong
+                                        >Dr. Supareak Praserthdam<br />
+                                        Associate Professor</strong
+                                    >
+                                    </h6>
+                                    Department of Chemical Engineering<br>
+                                    Faculty of Engineering, Chulalongkorn University, Bangkok, Thailand
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pt-2">
+                                    <img
                                     src="/static/asset/upload/people/speaker/4. Dr. Thanh-Binh Nguyen.jpg"
                                     style="width: 120px"
                                     class="z-depth-1"
@@ -204,26 +264,7 @@
                                     National Kaohsiung University of Science and Technology, Kaohsiung, Taiwan
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="pt-2">
-                                    <img
-                                    src="/static/asset/upload/people/speaker/5. Dr. Cattaleeya Pattamaprom.jpg"
-                                    style="width: 120px"
-                                    class="z-depth-1"
-                                    />
-                                </td>
-                                <td class="pl-3 pt-2">
-                                    <h6><strong>Topic: <i class="text-muted">*to be announced*</i></strong></h6>
-                                    <h6>
-                                    <strong
-                                        >Dr. Cattaleeya Pattamaprom<br />
-                                        Professor</strong
-                                    >
-                                    </h6>
-                                    Department of Chemical Engineering<br>
-                                    Faculty of Engineering, Thammasat University, Thailand
-                                </td>
-                            </tr>
+                            
                             
                             </tbody>
                         </table>
