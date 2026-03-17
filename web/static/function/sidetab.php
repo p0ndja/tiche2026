@@ -3,13 +3,18 @@
         <h4 class="card-title font-weight-bold text-md">Important Dates</h4>
         <!-- <small> -->
         <p class=''><b style="color:#0D47A1">Abstract Submission</b><br>
-            <!-- <span style='color:red;text-decoration:line-through'> -->
-                <span>until March 15, 2026</span>
-            <!-- </span> -->
-            <!-- <span>until April 15, 2026</span>&nbsp;<span class="badge badge-danger">CLOSED</span> -->
+            <span style='color:red;text-decoration:line-through'>
+                <span>until March 15, 2026</span><br>
+            </span>
+            <span>until April 17, 2026</span><!--&nbsp;<span class="badge badge-danger">CLOSED</span>-->
         </p>
         <!-- </small> -->
-        <p class=''><b style="color:#0D47A1">Notification of Acceptance</b><br><span>within April 15, 2026</span></p>
+        <p class=''><b style="color:#0D47A1">Notification of Acceptance</b><br>
+            <span style='color:red;text-decoration:line-through'>
+                <span>until April 15, 2026</span><br>
+            </span>
+            <span>until April 30, 2026</span>
+        </p>
         <p class=''><b style="color:#0D47A1">Early Bird Registration</b><br>   <span>until March 31, 2026</span></p>
         <p class=''><b style="color:#0D47A1">Full Delegate Registration</b><br><span>until April 30, 2026</span></p>
         <p class=''><b style="color:#0D47A1">Full Paper Submission (Proceedings)</b><br><span>until April 30, 2026</span></p>
