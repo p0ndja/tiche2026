@@ -6,19 +6,14 @@ services:
     container_name: tiche2026_web
     restart: unless-stopped
     labels:
-      # Traefik configuration
       - "traefik.enable=true"
-      # HTTP configuration for localhost
-      - "traefik.http.routers.tiche2026-http.rule=Host(`tiche2026.localhost`)"
-      - "traefik.http.routers.tiche2026-http.entrypoints=web"
-      - "traefik.http.services.tiche2026-service.loadbalancer.server.port=80"
-      # HTTPS configuration for external domain
-      - "traefik.http.routers.tiche2026-https.rule=Host(`tiche2026-uat.lorgiz.xyz`)"
-      - "traefik.http.routers.tiche2026-https.entrypoints=websecure"
-      - "traefik.http.routers.tiche2026-https.tls=true"
-      - "traefik.http.routers.tiche2026-https.tls.certresolver=myresolver"
-      - "traefik.http.routers.tiche2026-https.service=tiche2026-service"
-      # Explicitly tell Traefik which network to use
+
+      - "traefik.http.routers.tiche2026-uat.rule=Host(`tiche2026-uat.localhost`) || Host(`tiche2026-uat.lorgiz.xyz`)"
+      - "traefik.http.routers.tiche2026-uat.entrypoints=web"
+      - "traefik.http.routers.tiche2026-uat.service=tiche2026-uat-service"
+      
+      - "traefik.http.services.tiche2026-uat-service.loadbalancer.server.port=80"
+      
       - "traefik.docker.network=traefik_network"
     volumes:
       - ./web:/var/www/html
