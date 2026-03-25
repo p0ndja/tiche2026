@@ -73,28 +73,28 @@
                                 <tr>
                                     <td>
                                         <img
-                                        src="/static/asset/upload/people/speaker/Mr. Kwanpadh Suddhi-Dhamakit.jpg"
+                                        src="/static/asset/upload/people/speaker/Dr. Katherine Stapleton.jpg"
                                         style="width: 120px"
                                         class="z-depth-1"
                                         />
                                     </td>
                                     <td class="pl-3">
                                         <h6><strong>Topic: Digital Pathways to Growth: Achieving Sustainability and Better Jobs through Standards and AI</strong></h6>
-                                        <h6><strong>Mr. Kwanpadh Suddhi-Dhamakit</strong></h6>
-                                        Senior Country Officer for Thailand at the World Bank
+                                        <h6><strong>Dr. Katherine Stapleton</strong></h6>
+                                        Senior Economist, The World Bank
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="pt-2">
                                         <img
-                                        src="/static/asset/people.jpg"
+                                        src="/static/asset/upload/people/speaker/Ms. Insa Illgen.jpg"
                                         style="width: 120px"
                                         class="z-depth-1"
                                         />
                                     </td>
                                     <td class="pl-3 pt-2">
-                                        <h6><strong>Topic: Sustainability, Net-zero carbon </strong></h6>
-                                        <h6><strong>Representative Speaker</strong></h6>
+                                        <h6><strong>Topic: Accelerating Industrial Decarbonization under Thailand's Net Zero Agenda</strong></h6>
+                                        <h6><strong>Ms. Insa Illgen</strong></h6>
                                         Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ),<br>
                                         Germany
                                     </td>
@@ -233,7 +233,7 @@
                                     />
                                 </td>
                                 <td class="pl-3 pt-2">
-                                    <h6><strong>Topic: <i class="text-muted">*to be announced*</i></strong></h6>
+                                    <h6><strong>Topic: Quantum Chemistry-informed Optimization of Heterogeneous Catalytic Processes: A Case Study of Integrated Carbon Capture and Conversion</strong></h6>
                                     <h6>
                                     <strong
                                         >Dr. Supareak Praserthdam<br />
