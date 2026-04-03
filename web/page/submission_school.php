@@ -49,7 +49,7 @@
                 <p>
                 <b>Submission Deadlines and Competition Date:</b>
                 <ul>
-                <li>Schools must submit the student names, project title, supervising teacher's name, and project description (in English, not exceeding 250 words) by <b><span style="text-decoration:line-through;text-decoration-color:red;">February 28, 2026</span> April 3, 2026 (extended).</b></li>
+                <li>Schools must submit the student names, project title, supervising teacher's name, and project description (in English, not exceeding 250 words) by <b><span style="text-decoration:line-through;text-decoration-color:red;">February 28, 2026</span> April 30, 2026 (extended).</b></li>
                 <li>Announcement of selected projects for the competition will be made by <b><span style="text-decoration:line-through;text-decoration-color:red;">March 30, 2026</span> April 30, 2026 (extended).</b></li>
                 <li>TIChE High School Project Contest 2026 will take place on <b>June 10, 2026</b>, at Dusit Thani Hotel, Pattaya, Chonburi.</li>
                 </ul>
