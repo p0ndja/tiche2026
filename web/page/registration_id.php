@@ -50,9 +50,11 @@
                         <!-- Category -->
                         <div class="form-group">
                             <label for="reg_category">Type of Registration</label>
-                            <select class="form-control" id="reg_category" name="reg_category" disabled>
+                            <select class="form-control" id="reg_category" name="reg_category" readonly disabled>
                                     <option value="Presenter">Presenter</option>
                                     <option value="Participant">Participant</option>
+                                    <option value="Senior">TIChE Senior Project Contest 2026 Attendee</option>
+                                    <option value="High-School Student Attendee">High-School Student Attendee</option>
                                 </select>
                             <script>$(`#reg_category`).val(`<?php echo $rrr['reg_category']; ?>`);</script>
                         </div>
@@ -61,6 +63,7 @@
                             <input type="text" class="form-control" id="reg_code" name="reg_code" readonly value="<?php echo $rrr['reg_code']; ?>">
                         </div>
                         <hr>
+                        <?php if ($rrr['reg_category'] == 'Presenter' || $rrr['reg_category'] == 'Participant') { ?>
                         <div class="form-group">
                             <label for="reg_fullName">Full Name</label>
                             <input type="text" class="form-control" id="reg_fullName" name="reg_fullName" readonly value="<?php echo $rrr['reg_fullName']; ?>">
@@ -109,6 +112,24 @@
                             <label for="reg_amount">Amount of Payment (in THB)</label>
                             <input type="text" class="form-control" id="reg_amount" name="reg_payment_amount" readonly value="<?php echo $rrr['reg_payment_amount']; ?>">
                         </div>
+                        <?php } else if ($rrr['reg_category'] == 'Senior') { ?>
+                            <div class="form-group">
+                                <label for="reg_date">Date of Registration</label>
+                                <input type="text" class="form-control" id="reg_date" name="reg_payment_date" readonly value="<?php echo $rrr['reg_payment_timestamp']; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="reg_seniorProject_projectName">Project Name</label>
+                                <input type="text" class="form-control" id="reg_seniorProject_projectName" name="reg_seniorProject_projectName" readonly value="<?php echo $rrr['reg_note']; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="reg_seniorProject_primaryContactName">Name of Primary Contact</label>
+                                <input type="text" class="form-control" id="reg_seniorProject_primaryContactName" name="reg_seniorProject_primaryContactName" readonly value="<?php echo $rrr['reg_fullName']; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="reg_seniorProject_primaryContactEmail">Email of Primary Contact</label>
+                                <input type="email" class="form-control" id="reg_seniorProject_primaryContactEmail" name="reg_seniorProject_primaryContactEmail" readonly value="<?php echo $rrr['reg_email']; ?>">
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

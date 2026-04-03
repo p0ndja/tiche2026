@@ -39,9 +39,15 @@
                                         <tr onmouseup="window.location.href = '/registration/<?php echo $row['id']; ?>'" style="cursor: pointer">
                                         <td><a href="/registration/<?php echo $row['id']; ?>"><?php echo $row['id']; ?></a></td>
                                         <td><a href="/registration/<?php echo $row['id']; ?>"><?php echo $row['author']; ?></a></td>
-                                        <td><a href="/registration/<?php echo $row['id']; ?>"><?php echo $row['type']; ?> <?php if ($row['payment'] == 3000 || $row['payment'] == 5000) echo "(Early)"; ?> <?php if ($row['type'] == "Presenter") echo " #<b>" . $row['abstract'] . "</b>"; ?></a></td>
+                                        <td><a href="/registration/<?php echo $row['id']; ?>"><?php echo $row['type']; ?> <?php if ($row['payment'] == 3000 || $row['payment'] == 5000) echo "(Early)"; ?> <?php if ($row['type'] == "Presenter") echo " #<b>" . $row['abstract'] . "</b>"; else if ($row['type'] == "Senior") echo " Project Contest"; ?></a></td>
                                         <td class="text-center"><?php echo $row['submitDate']; ?></td>
-                                        <td class="text-left"><?php echo empty($row['paid']) ? "<span class='text-danger'>Unpaid</span>" : "<span>".$row['paid']."</span>"; ?></td>
+                                        <td class="text-left">
+                                            <?php if ($row['payment'] == 0) {
+                                                echo "<span class='text-secondary'>Waived</span>";
+                                            } else { ?>
+                                            <?php echo empty($row['paid']) ? "<span class='text-danger'>Unpaid</span>" : "<span>".$row['paid']."</span>"; ?>
+                                            <?php } ?>
+                                        </td>
                                         </tr>
                                     <?php }
                                     }
