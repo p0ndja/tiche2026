@@ -113,9 +113,9 @@
                 } else {
                     sendEmail(
                         $reg_email,
-                        "TIChE 2026 Registration - $reg_fullName",
+                        "TIChE 2026 Registration - $reg_fullName (Project: $reg_affiliation)",
                         "https://tiche2026.ubu.ac.th/static/function/mail/template/registration_success.html",
-                        array("name"=>$reg_fullName, "date"=>date("Y-m-d H:i:s", time()), "id"=>sprintf("%06d", $id)));
+                        array("name"=>$reg_fullName . " (Project: " . $reg_affiliation . ")", "date"=>date("Y-m-d H:i:s", time()), "id"=>sprintf("%06d", $id)));
                     $_SESSION['SweetAlert'] = new SweetAlert("Success", "Your registration has been recorded successfully! registration ID #$id", SweetAlert::SUCCESS);
                     header("Location: /registration/$id");
                     die();
@@ -154,9 +154,9 @@
                 } else {
                     sendEmail(
                         $reg_email,
-                        "TIChE 2026 Registration - $reg_fullName",
+                        "TIChE 2026 Registration - $reg_fullName (Project: $reg_affiliation)",
                         "https://tiche2026.ubu.ac.th/static/function/mail/template/registration_payment.html",
-                        array("name"=>$reg_fullName, "date"=>date("Y-m-d H:i:s", time()), "id"=>sprintf("%06d", $id)));
+                        array("name"=>$reg_fullName . " (Project: " . $reg_affiliation . ")", "date"=>date("Y-m-d H:i:s", time()), "id"=>sprintf("%06d", $id)));
                     $conn->close();
                     $_SESSION['registration_id'] = $id;
                     header("Location: /registration/result");
