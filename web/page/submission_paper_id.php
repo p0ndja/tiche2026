@@ -43,12 +43,11 @@
                         <h5 class="font-weight-bold mt-3 mb-0">Type of Full Paper</h5>
                         <hr>
                         <div class="form-group">
-                            <label for="typeOfPaper">Type of Paper <span class="text-danger">*</span></label>
-                            <select id="typeOfPaper" name="typeOfPaper" class="form-control" required>
+                            <label for="typeOfPaper">Type of Paper</label>
+                            <select id="typeOfPaper" name="typeOfPaper" class="form-control" disabled>
                                 <option value="" disabled selected>Select Type of Paper</option>
                                 <option value="TIChE2026 Conference Proceeding">TIChE2026 Conference Proceeding</option>
-                                <option value="Applied Environmental Research">Applied Environmental Research</option>
-                                <option value="Asia-Pacific Journal of Science and Technology">Asia-Pacific Journal of Science and Technology</option>
+                                <option value="Thai Environmental Engineering Journal">Thai Environmental Engineering Journal</option>
                             </select>
                         </div>
                         <script>

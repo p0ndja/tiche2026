@@ -286,7 +286,7 @@
                                         }
                                     } else if ($('#reg_category').val() == 'High-School') {
                                         // in format of TIChE-HS-ANN, where NN is two-digit number
-                                        var codePattern = /^TIChE-HS-A\d{2}$/;
+                                        var codePattern = /^TIChE-HS-\d{2}$/;
                                         if (codePattern.test(code)) {
                                             $('#reg_code').removeClass('is-invalid');
                                             $('#reg_code').addClass('is-valid');
