@@ -49,12 +49,16 @@
                     <div class="card-body">
                         <!-- Category -->
                         <div class="form-group">
+                            <label for="reg_date">Date of Registration</label>
+                            <input type="text" class="form-control" id="reg_date" name="reg_timestamp" readonly value="<?php echo $rrr['reg_timestamp']; ?>">
+                        </div>
+                        <div class="form-group">
                             <label for="reg_category">Type of Registration</label>
                             <select class="form-control" id="reg_category" name="reg_category" readonly disabled>
                                     <option value="Presenter">Presenter</option>
                                     <option value="Participant">Participant</option>
                                     <option value="Senior">TIChE Senior Project Contest 2026 Attendee</option>
-                                    <option value="High-School Student Attendee">High-School Student Attendee</option>
+                                    <option value="High-School">TIChE High-School Project Contest 2026 Attendee</option>
                                 </select>
                             <script>$(`#reg_category`).val(`<?php echo $rrr['reg_category']; ?>`);</script>
                         </div>
@@ -114,9 +118,18 @@
                         </div>
                         <?php } else if ($rrr['reg_category'] == 'Senior') { ?>
                             <div class="form-group">
-                                <label for="reg_date">Date of Registration</label>
-                                <input type="text" class="form-control" id="reg_date" name="reg_payment_date" readonly value="<?php echo $rrr['reg_payment_timestamp']; ?>">
+                                <label for="reg_seniorProject_projectName">Project Name</label>
+                                <input type="text" class="form-control" id="reg_seniorProject_projectName" name="reg_seniorProject_projectName" readonly value="<?php echo $rrr['reg_note']; ?>">
                             </div>
+                            <div class="form-group">
+                                <label for="reg_seniorProject_primaryContactName">Name of Primary Contact</label>
+                                <input type="text" class="form-control" id="reg_seniorProject_primaryContactName" name="reg_seniorProject_primaryContactName" readonly value="<?php echo $rrr['reg_fullName']; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="reg_seniorProject_primaryContactEmail">Email of Primary Contact</label>
+                                <input type="email" class="form-control" id="reg_seniorProject_primaryContactEmail" name="reg_seniorProject_primaryContactEmail" readonly value="<?php echo $rrr['reg_email']; ?>">
+                            </div>
+                        <?php } else if ($rrr['reg_category'] == 'High-School') { ?>
                             <div class="form-group">
                                 <label for="reg_seniorProject_projectName">Project Name</label>
                                 <input type="text" class="form-control" id="reg_seniorProject_projectName" name="reg_seniorProject_projectName" readonly value="<?php echo $rrr['reg_note']; ?>">
@@ -128,6 +141,49 @@
                             <div class="form-group">
                                 <label for="reg_seniorProject_primaryContactEmail">Email of Primary Contact</label>
                                 <input type="email" class="form-control" id="reg_seniorProject_primaryContactEmail" name="reg_seniorProject_primaryContactEmail" readonly value="<?php echo $rrr['reg_email']; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="reg_highSchoolAttendee_number">Number of Extra Participants <small>(e.g. teachers, excluding students who attend the TIChE High School Project Contest 2026)</small></label>
+                                <select class="form-control" id="reg_highSchoolAttendee_number" name="reg_highSchoolAttendee_number" required disabled>
+                                    <option value="0">No extra participants</option>
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 people</option>
+                                    <option value="3">3 people</option>
+                                </select>
+                                <small class="form-text text-muted">For any extra participants, excluding up to 3 students who attend the TIChE High School Project Contest 2026, have to pay an extra 1250 THB/person)</small>
+                                <script>$(`#reg_highSchoolAttendee_number`).val(`<?php echo $rrr['reg_phone']; ?>`);</script>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg_note">Receipt Information (Billing Address)</label>
+                                <textarea class="form-control" id="reg_note" name="reg_note" readonly rows="5"><?php echo $rrr['reg_note']; ?></textarea>
+                                <?php 
+                                $dateBetween = (strtotime($rrr['reg_timestamp']) + 60 * 60 * 24 * 14) - time();
+                                // Hard deadline = 9 June 2026, 00:00:00 GMT+7
+                                $hardDeadline = strtotime('2026-06-09 00:00:00') - time();
+                                if ($hardDeadline < 0) {
+                                    $dateBetween = -1;
+                                }
+                                ?>
+                                <?php if (($rrr['user_id'] == getUser()->getID() && ($dateBetween > 0) && !$rrr['reg_note_confirm']) || isAdmin()) { ?>
+                                <div id="billingEditBtnContainer">
+                                    <small class="form-text text-muted <?php if (isAdmin()) echo 'd-none';?>">You can edit this information <u class="text-danger">ONLY ONCE</u> within 14 days of registration and not after the conference has started.</small>
+                                    <a href="#edit" class="btn btn-secondary mt-2" onclick="editBillingInfo(<?php echo $rrr['reg_id']; ?>)">Edit Billing Information</a>
+                                </div>
+                                <div id="billingEditInfoContainer" style="display:none">
+                                    <a href="#edit" class="btn btn-success mt-2" onclick="submitEditedBillingInfo(<?php echo $rrr['reg_id']; ?>)">Update</a>
+                                    <a href="#edit" class="btn btn-danger mt-2" onclick="cancelEditBillingInfo()">Discard</a>
+                                </div>
+                                <?php } ?>
+                            </div>
+                            <h5 class="font-weight-bold mt-3 mb-0">Payment Information</h5>
+                            <hr>
+                            <div class="form-group">
+                                <label for="reg_date">Date of Payment</label>
+                                <input type="text" class="form-control" id="reg_date" name="reg_payment_date" readonly value="<?php echo $rrr['reg_payment_timestamp']; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="reg_amount">Amount of Payment (in THB)</label>
+                                <input type="text" class="form-control" id="reg_amount" name="reg_payment_amount" readonly value="<?php echo $rrr['reg_payment_amount']; ?>">
                             </div>
                         <?php } ?>
                     </div>

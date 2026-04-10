@@ -36,9 +36,9 @@
                     <table class="table w-100 table-light table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col" style="background-color: var(--ubu-blue); color: white; vertical-align: middle;"><b>REGISTRATION FEE</b></th>
-                                <th scope="col" style="background-color: var(--ubu-blue); color: white; vertical-align: middle;"><center><b>Early Registration<br><small>until March 31, 2026</small></b></center></th>
-                                <th scope="col" style="background-color: var(--ubu-blue); color: white; vertical-align: middle;"><center><b>Regular Registration</b></center></th>
+                                <th scope="col" style="background-color: var(--ubu-blue); color: white; vertical-align: middle;"><b>REGISTRATION CATEGORY</b></th>
+                                <th scope="col" style="background-color: var(--ubu-blue); color: white; vertical-align: middle;"><center><b>Early Registration Fee<br><small>until March 31, 2026</small></b></center></th>
+                                <th scope="col" style="background-color: var(--ubu-blue); color: white; vertical-align: middle;"><center><b>Regular Registration Fee</b></center></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -80,18 +80,18 @@
                     <table class="table w-100 table-light table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col" style="background-color: var(--ubu-gold); color: white; vertical-align: middle;"><b>REGISTRATION FEE</b></th>
-                                <th scope="col" style="background-color: var(--ubu-gold); color: white; vertical-align: middle;"><center><b>Regular Registration</b></center></th>
+                                <th scope="col" style="background-color: var(--ubu-gold); color: white; vertical-align: middle;"><b>REGISTRATION CATEGORY</b></th>
+                                <th scope="col" style="background-color: var(--ubu-gold); color: white; vertical-align: middle;"><center><b>Registration Fee</b></center></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td style="background-color: var(--ubu-yellow); color: var(--ubu-blue); vertical-align: middle;"><b>TIChE Senior Project Contest 2026 Attendees</b></td>
-                                <td style="background-color: var(--ubu-sub-yellow); color: var(--ubu-blue); vertical-align: middle;"><center><b>Free*</b><br><small>(*Registration required only once per each project)</small></center></td>
+                                <td style="background-color: var(--ubu-sub-yellow); color: var(--ubu-blue); vertical-align: middle;"><center><b>Free*</b><br><small class="text-muted">(*Registration required only once per each project)</small></center></td>
                             </tr>
                             <tr>
-                                <td style="background-color: var(--ubu-yellow); color: var(--ubu-blue); vertical-align: middle;"><b>High-School Student Attendees<!--br><small>(3 people per project)</small--></b></td>
-                                <td style="background-color: var(--ubu-sub-yellow); color: var(--ubu-blue); vertical-align: middle;"><center><i><b>to be announced</b></i></center></td>
+                                <td style="background-color: var(--ubu-yellow); color: var(--ubu-blue); vertical-align: middle;"><b>TIChE High-School Project Contest 2026 Attendees</b></td>
+                                <td style="background-color: var(--ubu-sub-yellow); color: var(--ubu-blue); vertical-align: middle;"><center><b>3750 THB per project</b><br><small class="text-muted">(Up to 3 students)</small><br><b>+1250 THB/person</b><br><small class="text-muted">(For additional participants, e.g. teacher)</small></center></td>
                             </tr>
                         </tbody>
                     </table>
@@ -126,7 +126,7 @@
                                     <option value="Presenter">Presenter</option>
                                     <option value="Participant">Participant</option>
                                     <option value="Senior">TIChE Senior Project Contest 2026 Attendee</option>
-                                    <option value="High-School Student Attendee" disabled>High-School Student Attendee</option>
+                                    <option value="High-School">TIChE High-School Project Contest 2026 Attendee</option>
                                 </select>
                             </div>
                             <div class="form-group" id="reg_code_div">
@@ -142,16 +142,29 @@
                                         $("#reg_participant").show();
                                         $('#reg_seniorProject').hide();
                                         $('#reg_code').prop('required', true);
+                                        $('#reg_highSchoolAttendee').hide();
+                                        $('#reg_billing').show();
                                     } else if ( $('#reg_category').val() == 'Senior') {
                                         $('#reg_code_div').show();
                                         $('#reg_code').prop('required', true);
                                         $('#reg_participant').hide();
                                         $('#reg_seniorProject').show();
+                                        $('#reg_highSchoolAttendee').hide();
+                                        $('#reg_billing').hide();
+                                    } else if ($('#reg_category').val() == 'High-School') {
+                                        $('#reg_code_div').show();
+                                        $('#reg_code').prop('required', true);
+                                        $('#reg_participant').hide();
+                                        $('#reg_seniorProject').show();
+                                        $('#reg_highSchoolAttendee').show();
+                                        $('#reg_billing').show();
                                     } else {
                                         $("#reg_participant").show();
                                         $('#reg_seniorProject').hide();
                                         $('#reg_code_div').hide();
                                         $('#reg_code').prop('required', false);
+                                        $('#reg_highSchoolAttendee').hide();
+                                        $('#reg_billing').show();
                                     }
                                 });
                             </script>
@@ -173,12 +186,6 @@
                                     <label for="reg_phone">Phone Number<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="reg_phone" name="reg_phone" required <?php if ($isClose) echo "disabled"; ?>>
                                 </div>
-                                <hr>
-                                <!-- Upload File -->
-                                <div class="form-group">
-                                    <label for="reg_note">Receipt Information (Billing Address) <small class="text-primary">In Thai or English</small></label>
-                                    <textarea class="form-control" id="reg_note" name="reg_note" rows="5" <?php if ($isClose) echo "disabled"; ?>></textarea>
-                                </div>
                             </div>
                             <div id="reg_seniorProject" style="display: none;">
                                 <div class="form-group">
@@ -192,6 +199,25 @@
                                 <div class="form-group">
                                     <label for="reg_seniorProject_primaryContactEmail">Email of Primary Contact<span class="text-danger">*</span></label>
                                     <input type="email" class="form-control" id="reg_seniorProject_primaryContactEmail" name="reg_seniorProject_primaryContactEmail" required <?php if ($isClose) echo "disabled"; ?>>
+                                </div>
+                                <div id="reg_highSchoolAttendee" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="reg_highSchoolAttendee_number">Number of Extra Participants<span class="text-danger">*</span></label>
+                                        <select class="form-control" id="reg_highSchoolAttendee_number" name="reg_highSchoolAttendee_number" required <?php if ($isClose) echo "disabled"; ?>>
+                                            <option value="0" selected>No extra participants</option>
+                                            <option value="1">1 person</option>
+                                            <option value="2">2 people</option>
+                                            <option value="3">3 people</option>
+                                        </select>
+                                        <small class="form-text text-muted">For any extra participants, e.g. teachers, excluding up to 3 students who attend the TIChE High School Project Contest 2026, have to pay an extra 1250 THB/person)</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="reg_billing">
+                                <hr>
+                                <div class="form-group">
+                                    <label for="reg_note">Receipt Information (Billing Address) <small class="text-primary">In Thai or English</small></label>
+                                    <textarea class="form-control" id="reg_note" name="reg_note" rows="5" <?php if ($isClose) echo "disabled"; ?>></textarea>
                                 </div>
                             </div>
                             <div class="cf-turnstile mb-4" data-theme="light" data-sitekey="0x4AAAAAABh0HRZB4iCc89in"></div>
@@ -238,8 +264,8 @@
                                 // validate abstract code, only when presenter is selected
                                 // in format of TIChE-XX-NN, where XX is two-letter (CR, SG, AM, BE, PE, EF, IA) and NN is two-digit number
                                 $('#reg_code').on('input', function() {
+                                    var code = $('#reg_code').val();
                                     if ($('#reg_category').val() == 'Presenter') {
-                                        var code = $('#reg_code').val();
                                         var codePattern = /^TIChE-(CR|SG|AM|BE|PE|EF|IA)-\d{2}$/;
                                         if (codePattern.test(code)) {
                                             $('#reg_code').removeClass('is-invalid');
@@ -250,8 +276,17 @@
                                         }
                                     } else if ($('#reg_category').val() == 'Senior') {
                                         // in format of TIChE-SE-XNN, where NN is two-digit number, X is A for Applied and B for Basic
-                                        var code = $('#reg_code').val();
                                         var codePattern = /^TIChE-SE-(A|B)\d{2}$/;
+                                        if (codePattern.test(code)) {
+                                            $('#reg_code').removeClass('is-invalid');
+                                            $('#reg_code').addClass('is-valid');
+                                        } else {
+                                            $('#reg_code').removeClass('is-valid');
+                                            $('#reg_code').addClass('is-invalid');
+                                        }
+                                    } else if ($('#reg_category').val() == 'High-School') {
+                                        // in format of TIChE-HS-ANN, where NN is two-digit number
+                                        var codePattern = /^TIChE-HS-A\d{2}$/;
                                         if (codePattern.test(code)) {
                                             $('#reg_code').removeClass('is-invalid');
                                             $('#reg_code').addClass('is-valid');
