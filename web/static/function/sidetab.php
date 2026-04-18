@@ -6,7 +6,7 @@
             <span style='color:red;text-decoration:line-through'>
                 <span>until March 15, 2026</span><br>
             </span>
-            <span>until April 17, 2026</span><!--&nbsp;<span class="badge badge-danger">CLOSED</span>-->
+            <span>until April 27, 2026</span><!--&nbsp;<span class="badge badge-danger">CLOSED</span>-->
         </p>
         <!-- </small> -->
         <p class=''><b style="color:#0D47A1">Notification of Acceptance</b><br>

@@ -73,7 +73,7 @@
                                 <tr>
                                     <td>
                                         <img
-                                        src="/static/asset/upload/people/speaker/Dr. Katherine Stapleton.jpg"
+                                        src="/static/asset/upload/people/speaker/Dr.%20Katherine%20Stapleton.jpg"
                                         style="width: 120px"
                                         class="z-depth-1"
                                         />
@@ -87,7 +87,7 @@
                                 <tr>
                                     <td class="pt-2">
                                         <img
-                                        src="/static/asset/upload/people/speaker/Ms. Insa Illgen.jpg"
+                                        src="/static/asset/upload/people/speaker/Ms.%20Insa%20Illgen.jpg"
                                         style="width: 120px"
                                         class="z-depth-1"
                                         />
@@ -102,7 +102,7 @@
                                 <tr>
                                     <td class="pt-2">
                                         <img
-                                        src="/static/asset/upload/people/speaker/Mr. Burin Adulwattana.jpg"
+                                        src="/static/asset/upload/people/speaker/Mr.%20Burin%20Adulwattana.jpg"
                                         style="width: 120px"
                                         class="z-depth-1"
                                         />
@@ -127,7 +127,7 @@
                             <tr>
                                 <td>
                                     <img
-                                    src="/static/asset/upload/people/speaker/5. Dr. Cattaleeya Pattamaprom.jpg"
+                                    src="/static/asset/upload/people/speaker/5.%20Dr.%20Cattaleeya%20Pattamaprom.jpg"
                                     style="width: 120px"
                                     class="z-depth-1"
                                     />
@@ -147,7 +147,7 @@
                             <tr>
                                 <td class="pt-2">
                                     <img
-                                    src="/static/asset/upload/people/speaker/2. Dr. Hiroyasu Tabe.jpg"
+                                    src="/static/asset/upload/people/speaker/2.%20Dr.%20Hiroyasu%20Tabe.jpg"
                                     style="width: 120px"
                                     class="z-depth-1"
                                     />
@@ -167,7 +167,27 @@
                             <tr>
                                 <td class="pt-2">
                                     <img
-                                    src="/static/asset/upload/people/speaker/1. Dr. Pawin Iamprasertkun.jpg"
+                                    src="/static/asset/upload/people/speaker/3.%20Prof.%20Dr.%20Hui%20Tong%20Chua.jpg"
+                                    style="width: 120px"
+                                    class="z-depth-1"
+                                    />
+                                </td>
+                                <td class="pl-3 pt-2">
+                                    <h6><strong>Topic: <i class="text-muted">*to be announced*</i></strong></h6>
+                                    <h6>
+                                    <strong
+                                        >Prof. Dr. Hui Tong Chua<br />
+                                        Professor</strong
+                                    >
+                                    </h6>
+                                    Department of Chemical Engineering<br>
+                                    School of Engineering, The University of Western Australia, Australia
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pt-2">
+                                    <img
+                                    src="/static/asset/upload/people/speaker/1.%20Dr.%20Pawin Iamprasertkun.jpg"
                                     style="width: 120px"
                                     class="z-depth-1"
                                     />
@@ -187,7 +207,7 @@
                             <tr>
                                 <td class="pt-2">
                                     <img
-                                    src="/static/asset/upload/people/speaker/2. Dr. Pornnapa Kasemsiri.jpg"
+                                    src="/static/asset/upload/people/speaker/2.%20Dr.%20Pornnapa Kasemsiri.jpg"
                                     style="width: 120px"
                                     class="z-depth-1"
                                     />
@@ -207,7 +227,7 @@
                             <tr>
                                 <td class="pt-2">
                                     <img
-                                    src="/static/asset/upload/people/speaker/3. Dr. Ravin Narain.jpg"
+                                    src="/static/asset/upload/people/speaker/3.%20Dr.%20Ravin Narain.jpg"
                                     style="width: 120px"
                                     class="z-depth-1"
                                     />
@@ -227,7 +247,7 @@
                             <tr>
                                 <td class="pt-2">
                                     <img
-                                    src="/static/asset/upload/people/speaker/6. Dr. Supareak Praserthdam.jpg"
+                                    src="/static/asset/upload/people/speaker/6.%20Dr.%20Supareak Praserthdam.jpg"
                                     style="width: 120px"
                                     class="z-depth-1"
                                     />
@@ -247,7 +267,7 @@
                             <tr>
                                 <td class="pt-2">
                                     <img
-                                    src="/static/asset/upload/people/speaker/4. Dr. Thanh-Binh Nguyen.jpg"
+                                    src="/static/asset/upload/people/speaker/4.%20Dr.%20Thanh-Binh Nguyen.jpg"
                                     style="width: 120px"
                                     class="z-depth-1"
                                     />
