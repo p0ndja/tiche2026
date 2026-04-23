@@ -173,7 +173,7 @@
                                     />
                                 </td>
                                 <td class="pl-3 pt-2">
-                                    <h6><strong>Topic: <i class="text-muted">*to be announced*</i></strong></h6>
+                                    <h6><strong>Topic: Lamp Ablation Technology for Accessing Various Nanostructures</strong></h6>
                                     <h6>
                                     <strong
                                         >Prof. Dr. Hui Tong Chua<br />
