@@ -105,7 +105,7 @@
                                         If the authors need to preceed with this publication, the submission must follow the provided template and include at least 5 pages and no more than 8 pages. </span>
                                         <span class='text-danger'>The final submission deadline is <b>April 30, 2026</b>.</span>
                                         `);
-                                        $("#sub_file_label").html("Upload File<span class='text-danger'>*</span>&nbsp;<a href='/static/asset/upload/TIChE2026%20Conference%20Proceeding%20Template.docx' target='_blank'>[Download TIChE2026 Conference Proceeding Template]</a>");
+                                        $("#sub_file_label").html("Upload File<span class='text-danger'>*</span>&nbsp;<a href='/static/asset/upload/Conference%20Proceeding%20Template%20for%20TIChE2026.docx' target='_blank'>[Download TIChE2026 Conference Proceeding Template]</a>");
                                     } else if (type == 'Thai Environmental Engineering Journal') {
                                         $('#note').html(`
                                         <span class='text-primary'>Please note that this full paper will be considered by the TIChE2026 conference committee to ensure it aligns perfectly with the journal’s aims and scope to foster academic dialogue before submission to <b><i>Thai Environmental Engineering Journal</i></b>.</span> <span class='text-danger'>Kindly submit the manuscript to the TIChE2026 conference committee as indicated below <b>by April 30, 2026</b>. Then, we will inform the author regarding submission to the journal after consideration.</span>
