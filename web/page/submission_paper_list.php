@@ -21,6 +21,7 @@
                     <table class="table table-sm table-hover w-100 d-block d-md-table text-nowrap" id="attachmentTable">
                         <thead>
                             <tr>
+                                <th class="text-center">ID</th>
                                 <th class="text-center">Code</th>
                                 <th class="">Title</th>
                                 <th class="text-center">Submit Date</th>
@@ -35,6 +36,7 @@
                                     if ($result->num_rows > 0) {
                                         while ($row = $result->fetch_assoc()) { ?>
                                         <tr onmouseup="window.location.href = '/submission-paper/<?php echo $row['id']; ?>'" style="cursor: pointer">
+                                        <td class="text-center"><a href="/submission-paper/<?php echo $row['id']; ?>"><?php echo $row['id']; ?></a></td>
                                         <td class=""><a href="/submission-paper/<?php echo $row['id']; ?>"><?php echo $row['code']; ?></a></td>
                                         <td class=""><a href="/submission-paper/<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></td>
                                         <td class="text-center"><?php echo $row['submitDate']; ?></td>
@@ -48,7 +50,7 @@
                     <script>
                         $(document).ready(function () {
                             $('#attachmentTable').DataTable({
-                                "order": [[2, "desc"]],
+                                "order": [[3, "desc"]],
                                 "pageLength": 25,
                                 "lengthMenu": [25, 50, 100],
                                 "aoColumns": [
@@ -56,7 +58,10 @@
                                         "sWidth": "5%"
                                     },
                                     {
-                                        "sWidth": "80%"
+                                        "sWidth": "5%"
+                                    },
+                                    {
+                                        "sWidth": "75%"
                                     },
                                     {
                                         "sWidth": "15%"
