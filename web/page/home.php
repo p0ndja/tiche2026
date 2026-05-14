@@ -187,6 +187,22 @@
                             <tr>
                                 <td class="pt-2">
                                     <img
+                                    src="/static/asset/upload/people/speaker/Mr.%20Michael%20Potts.jpg"
+                                    style="width: 120px"
+                                    class="z-depth-1"
+                                    />
+                                </td>
+                                <td class="pl-3 pt-2">
+                                    <h6><strong>Topic: Enabling a Growth Mindset and Learning at IChemE</strong></h6>
+                                    <h6>
+                                    <strong>Mr. Michael Potts</strong>
+                                    </h6>
+                                    Head of Learning and Development, IChemE
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pt-2">
+                                    <img
                                     src="/static/asset/upload/people/speaker/1.%20Dr.%20Pawin Iamprasertkun.jpg"
                                     style="width: 120px"
                                     class="z-depth-1"
