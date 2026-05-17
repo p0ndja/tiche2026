@@ -197,7 +197,8 @@
                                     <h6>
                                     <strong>Mr. Michael Potts</strong>
                                     </h6>
-                                    Head of Learning and Development, IChemE
+                                    Head of Learning and Development, IChemE<br>
+                                    Institution of Chemical Engineers, United Kingdom
                                 </td>
                             </tr>
                             <tr>
