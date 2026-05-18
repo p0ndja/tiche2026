@@ -72,7 +72,7 @@
 <meta property="og:url" content="<?php echo xss_clean($current_url); ?>" />
 
 <link rel="stylesheet" href="/static/library/fontawesome-free-6.2.1-web/css/all.min.css"/>
-<link rel="stylesheet" href="/static/library/bootstrap-4.6.1-dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/static/library/bootstrap-4.6.2-dist/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="/static/library/mdbootstrap-4.19.1/css/mdb.min.css"/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,7 +82,7 @@
 <link rel="stylesheet" href="/static/asset/style.css"/>
 
 <script src="/static/library/jquery-3.6.0.min.js"></script>
-<script src="/static/library/bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>            
+<script src="/static/library/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>            
 <script src="/static/library/mdbootstrap-4.19.1/js/mdb.min.js"></script>
 
 <!-- SweetAlert -->
@@ -100,3 +100,6 @@
 
 <!-- Cloudflare Turnstile -->
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<link href="/static/library/dataTables-1.13.11/jquery.dataTables.min.css" rel="stylesheet">
+<script src="/static/library/dataTables-1.13.11/jquery.dataTables.min.js"></script>
