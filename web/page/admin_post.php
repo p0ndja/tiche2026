@@ -4,8 +4,6 @@
 <head>
     <?php require_once '../static/function/script/head.php'; ?>
     <!-- jQuery DataTable -->
-    <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
-    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 </head>
 <?php require_once '../static/function/navigation/navbar.php'; ?>
 <body>
