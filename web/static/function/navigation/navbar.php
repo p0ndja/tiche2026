@@ -74,10 +74,10 @@
         <div id="navbarContent" class="collapse navbar-collapse">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item navbar-border-right">
-                    <a class="nav-link px-2 px-xl-3 py-2" href="/submission/abstract">Abstract Submission <!--<sup><span class="badge badge-danger">CLOSED</span></sup>--></a>
+                    <a class="nav-link px-2 px-xl-3 py-2" href="/submission/abstract">Abstract Submission <sup><span class="badge badge-danger">CLOSED</span></sup></a>
                 </li>
                 <li class="nav-item navbar-border-right">
-                    <a class="nav-link px-2 px-xl-3 py-2" href="/submission/full-paper">Full Paper Submission</a>
+                    <a class="nav-link px-2 px-xl-3 py-2" href="/submission/full-paper">Full Paper Submission <sup><span class="badge badge-danger">CLOSED</span></sup></a>
                 </li>
                 <li class="nav-item navbar-border-right">
                     <a class="nav-link px-2 px-xl-3 py-2" href="/registration/">Conference Registration <!--<sup><span class="badge badge-danger">CLOSED</span></sup>--></a>
