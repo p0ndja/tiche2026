@@ -73,15 +73,15 @@
                                 <tr>
                                     <td>
                                         <img
-                                        src="/static/asset/upload/people/speaker/Dr.%20Katherine%20Stapleton.jpg"
+                                        src="/static/asset/upload/people/speaker/Rachit%20Agarwal.jpg"
                                         style="width: 120px"
                                         class="z-depth-1"
                                         />
                                     </td>
                                     <td class="pl-3">
-                                        <h6><strong>Topic: Digital Pathways to Growth: Achieving Sustainability and Better Jobs through Standards and AI</strong></h6>
-                                        <h6><strong>Dr. Katherine Stapleton</strong></h6>
-                                        Senior Economist, The World Bank
+                                        <h6><strong>Topic: AI as the New Performance Divide in the Chemicals Industry</strong></h6>
+                                        <h6><strong>Mr. Rachit Agarwal, Principal</strong></h6>
+                                        Boston Consulting Group (BCG), Singapore
                                     </td>
                                 </tr>
                                 <tr>
