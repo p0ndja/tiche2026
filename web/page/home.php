@@ -250,7 +250,7 @@
                                     />
                                 </td>
                                 <td class="pl-3 pt-2">
-                                    <h6><strong>Topic: Advanced Nanoparticles Formulation for Biomedical Uses</strong></h6>
+                                    <h6><strong>Topic: Carbohydrate Based Biomaterials for Biomedical Applications</strong></h6>
                                     <h6>
                                     <strong
                                         >Dr. Ravin Narain<br />
