@@ -92,7 +92,7 @@
         </div>
     </nav>
 </div>
-<div class="container">
+<div class="container d-none">
     <nav class="navbar navbar-md navbar-expand-lg navbar-dark navbar-normal p-0 navbar-color-three" style="font-weight: 500;">
         <!-- <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler mx-auto">
             <span class="navbar-toggler-icon"></span>
