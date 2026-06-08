@@ -58,6 +58,8 @@ RewriteRule ^user/([0-9]+)$ page/admin_user.php?id=$1
 
 RewriteRule ^epub/$ page/flipbook_loader.php?color=white [L,QSA]
 RewriteRule ^epub/p([0-9]+)$ page/flipbook_loader.php?color=white&post=$1 [L,QSA]
+RewriteRule ^epub/abstract$ page/flipbook_loader.php?abstract [L,QSA]
+RewriteRule ^epub/proceeding$ page/flipbook_loader.php?proceeding [L,QSA]
 
 RewriteRule ^admin/(.*)$ page/admin_$1.php [B,L,QSA]
 

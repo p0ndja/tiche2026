@@ -10,7 +10,11 @@
 </head>
 <?php
     $pdf = "";
-    if (isset($_GET['file']) && file_exists($_GET['file'])) {
+    if (isset($_GET['abstract'])) {
+        $pdf = "/static/asset/upload/TIChE2026 Official Abstract Book.pdf";
+    // } else if (isset($_GET['proceeding'])) {
+    //     $pdf = "/static/asset/upload/TIChE2026 Official Conference Proceedings.pdf";
+    } else if (isset($_GET['file']) && file_exists($_GET['file'])) {
         $pdf = $_GET['file'];
     } else if (isset($_POST['file']) && file_exists($_POST['file'])) {
         $pdf = $_POST['file'];
