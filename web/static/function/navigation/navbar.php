@@ -66,7 +66,7 @@
         </div>
     </nav>
 </div>
-<div class="container text-uppercase">
+<div class="container">
     <nav class="navbar navbar-md navbar-expand-lg navbar-dark navbar-normal p-0 navbar-color-two" style="font-weight: 500;">
         <!-- <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler mx-auto">
             <span class="navbar-toggler-icon"></span>
@@ -74,19 +74,19 @@
         <div id="navbarContent" class="collapse navbar-collapse">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item navbar-border-right">
-                    <a class="nav-link px-2 px-xl-3 py-2" href="/post/100">Abstract Book <sup><span class="badge badge-success"><span class="blink">ONLINE</span></span></sup></a>
+                    <a class="nav-link px-2 px-xl-3 py-2 text-uppercase" href="/post/100">Abstract Book <sup><span class="badge badge-success"><span class="blink">ONLINE</span></span></sup></a>
                 </li>
                 <li class="nav-item navbar-border-right">
-                    <a class="nav-link px-2 px-xl-3 py-2" href="#">TIChE2026 Proceedings <sup><span class="badge badge-warning">SOON</span></sup></a>
+                    <a class="nav-link px-2 px-xl-3 py-2" href="/post/101">TIChE2026 Proceedings <sup><span class="badge badge-success"><span class="blink">ONLINE</span></span></sup></a>
                 </li>
                 <li class="nav-item navbar-border-right">
-                    <a class="nav-link px-2 px-xl-3 py-2" href="/registration/">Conference Registration <!--<sup><span class="badge badge-danger">CLOSED</span></sup>--></a>
+                    <a class="nav-link px-2 px-xl-3 py-2 text-uppercase" href="/registration/">Conference Registration <!--<sup><span class="badge badge-danger">CLOSED</span></sup>--></a>
                 </li>
                 <li class="nav-item navbar-border-right">
-                    <a class="nav-link px-2 px-xl-3 py-2" href="/post/4">Presentation Guideline</a>
+                    <a class="nav-link px-2 px-xl-3 py-2 text-uppercase" href="/post/4">Presentation Guideline</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link px-2 px-xl-3 py-2" href="/download/">DOWNLOAD</a>
+                    <a class="nav-link px-2 px-xl-3 py-2 text-uppercase" href="/download/">DOWNLOAD</a>
                 </li>
             </ul>
         </div>

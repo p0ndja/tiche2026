@@ -11,9 +11,11 @@
 <?php
     $pdf = "";
     if (isset($_GET['abstract'])) {
-        $pdf = "/static/asset/upload/TIChE2026 Official Abstract Book.pdf";
-    // } else if (isset($_GET['proceeding'])) {
-    //     $pdf = "/static/asset/upload/TIChE2026 Official Conference Proceedings.pdf";
+        $pdf = "/static/asset/upload/book/TIChE2026 Abstract Book.pdf";
+    } else if (isset($_GET['proceeding'])) {
+        $pdf = "/static/asset/upload/book/TIChE2026 Proceedings.pdf";
+    } else if (isset($_GET['program'])) {
+        $pdf = "/static/asset/upload/book/TIChE2026 Program Book.pdf";
     } else if (isset($_GET['file']) && file_exists($_GET['file'])) {
         $pdf = $_GET['file'];
     } else if (isset($_POST['file']) && file_exists($_POST['file'])) {
