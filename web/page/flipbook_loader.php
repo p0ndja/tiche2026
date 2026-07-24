@@ -12,7 +12,7 @@
     $pdf = "";
     if (isset($_GET['abstract'])) {
         $pdf = "/static/asset/upload/book/TIChE2026 Abstract Book.pdf";
-    } else if (isset($_GET['proceeding'])) {
+    } else if (isset($_GET['proceedings'])) {
         $pdf = "/static/asset/upload/book/TIChE2026 Proceedings.pdf";
     } else if (isset($_GET['program'])) {
         $pdf = "/static/asset/upload/book/TIChE2026 Program Book.pdf";
